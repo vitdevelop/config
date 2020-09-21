@@ -28,13 +28,10 @@
 `mount /dev/sda3 /mnt/home`
 
 #### 6. Install base packages
-> Microcode need to be installed if you have inte or amd
->
-> Intel -> intel-ucode
->
-> AMD -> amd-ucode
-
 `pacstrap /mnt base base-devel intel-ucode linux linux-headers linux-firmware grub efibootmgr neovim git`
+> Microcode need to be installed if you have intel or amd  
+> Intel -> intel-ucode  
+> AMD -> amd-ucode 
 
 #### 7. Generate fstab file
 `genfstab -U /mnt >> /mnt/etc/fstab`
