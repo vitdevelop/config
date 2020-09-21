@@ -1,0 +1,62 @@
+#! /bin/bash
+
+user='vitdevelop'
+host='192.168.8.2'
+directory=/Users/vitdevelop/Cloud_mail/work/
+file=
+local_directory=/run/media/Data/Cloud_MailRu/work
+reversed_temp_data=
+is_reversed=false
+dry_run=
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -u  | --user )
+            shift
+            user=$1
+            ;;
+        -h  | --host )
+            shift
+            host=$1
+            ;;
+        -d  | --directory )
+            shift
+            directory=$1
+            ;;
+        -f  | --file )
+            shift
+            file=$1
+            ;;
+        -ld | --local-directory )
+            shift
+            local_directory=$1
+            ;;
+        -r | --upload )
+            is_reversed=true
+            ;;
+        -t | --test )
+            dry_run='--dry-run'
+            ;;
+
+    esac
+    shift
+done
+
+
+destination=
+if [ "$file" != "" ]; then
+    destination=$user@$host:$file
+else
+    destination=$user@$host:$directory
+fi
+
+if [ "$is_reversed" == true ]; then
+    reversed_temp_data=$destination 
+    destination=$local_directory
+    local_directory=$reversed_temp_data
+fi
+
+echo "Source -> $destination"
+echo "Destination -> $local_directory"
+
+rsync -avzhr --progress $dry_run --rsh=ssh --delete --exclude=".idea/" --exclude=".DS_Store" --exclude="*.iml" --exclude=".vagrant/" --exclude=".mailru" $destination $local_directory

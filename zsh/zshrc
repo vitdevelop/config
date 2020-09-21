@@ -1,0 +1,425 @@
+# Path to your oh-my-zsh installation.
+export ZSH=/home/$USER/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="arrow"
+
+# Autostart tmux
+# ZSH_TMUX_AUTOSTART=true
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to enable command auto-correction.
+#ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+#COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+  tmux
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  kubectl
+  history
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# -------------------------------------------------------------------------
+# User configuration -------------------------------------------------------------------------
+
+# ------------------------------
+# Aliases
+# ------------------------------
+# Java
+# ------------------------------
+alias mvn-new="mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4"
+
+# Kubernetes
+# ------------------------------
+alias kube-current="kubectl config current-context"
+alias kube-info="kubectl cluster-info"
+alias k="kubectl"
+
+alias fm="sh ~/.local/bin/vifmrun ."
+alias f="fzf"
+alias vim="nvim"
+alias idea="idea.sh"
+alias vifm='sh ~/.local/bin/vifmrun'
+
+function open {
+    xdg-open $1 2>/dev/null &
+}
+
+# Java
+alias j11='sudo archlinux-java set java-11-openjdk'
+alias j14='sudo archlinux-java set java-14-openjdk'
+
+# Configuration Files
+# ------------------------------
+alias cfg-alacritty="nvim ~/.config/alacritty/alacritty.yml"
+alias cfg-zsh="nvim ~/.config/zsh/zshrc"
+alias cfg-vim="nvim ~/.config/nvim/init.vim"
+alias cfg-ideavim="nvim ~/.config/idea/ideavimrc"
+alias cfg-tmux="nvim ~/.config/tmux/tmux.conf"
+alias cfg-sxhkd="nvim ~/.config/sxhkd/sxhkdrc"
+alias cfg-bspwm="nvim ~/.config/bspwm/bspwmrc"
+alias cfg-polybar="nvim ~/.config/polybar/config"
+alias cfg-install="nvim ~/.config/install/install.sh"
+alias cfg-qutebrowser="nvim ~/.config/qutebrowser/config.py"
+alias cfg-vifm="nvim ~/.config/vifm/vifmrc"
+
+alias ce="find ~/.config -type f | grep -Ev \".git/|`cat .config/.gitignore | sed '/^$/d' | sed 's/.*/&/' | tr '\n' '|' | sed '$s/|$/\n/'`\" | fzf --preview='bat --color=always --style=header,grid --line-range :300 {}' | xargs -r $EDITOR"
+
+# Reload Configuration Files
+alias reload-cfg-zsh="source ~/.zshrc"
+
+alias intellij-cheatsheet="nohup evince ~/Workspace/Documentation/IntelliJIDEA_ReferenceCard.pdf &"
+
+# Others
+# ------------------------------
+alias h="hostname"
+alias tree="tree -C"
+alias http-server="python -m SimpleHTTPServer 5000"
+
+# Docker
+# ------------------------------
+alias docker-clean="docker system prune -a"
+
+# Kubernetes
+# ------------------------------
+
+# Pacman
+# ------------------------------
+alias pacman-list="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+alias pacman-count="sudo ls /var/cache/pacman/pkg | wc -l"
+alias pacman-size="du -sh /var/cache/pacman/pkg"
+
+# Git
+# ------------------------------
+alias gs="git status"
+alias gb="fgb"
+alias gbm="git checkout master"
+alias gbd="git checkout development"
+alias gRh="git reset --hard"
+alias gco="fgco"
+alias gcoc="fgcoc"
+alias gi="fgshow"
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gt="git tag"
+alias ga="git add --all"
+alias gc="git commit -am"
+alias gpm="git pull origin master"
+alias gpd="git pull origin development"
+alias gptm="git pull --tags origin master"
+alias gptd="git pull --tags origin development"
+alias gPm="git push origin master"
+alias gPd="git push origin develop"
+alias gPtm="git push --tags origin master"
+alias gPtd="git push --tags origin development"
+alias gmm="git merge master"
+alias gmd="git merge development"
+
+# get fastest mirrors
+# ------------------------------
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
+alias merge='xrdb -merge ~/.Xresources'
+
+alias mail='evolution'
+
+# get error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+# youtube-dl
+# ------------------------------
+alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+alias yta-best="youtube-dl --extract-audio --audio-format best "
+alias yta-flac="youtube-dl --extract-audio --audio-format flac "
+alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+alias yta-wav="youtube-dl --extract-audio --audio-format wav "
+alias ytv-mp4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]'"
+alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+
+
+alias catc="bat"
+
+alias trash-clear="rm -vrf ~/.trash/*"
+
+
+# SSH
+# ------------------------------
+
+# Bookmarks
+# ------------------------------
+alias cdconfig='cd ~/.config'
+alias cdinstall='cd ~/.config/install'
+alias cdnotes='cd ~/Notes'
+alias cdpassword-store='cd ~/.password-store'
+alias cdtrash="cd ~/.trash"
+
+
+# ------------------------------
+# Initialization code
+# ------------------------------
+# Initializa FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# ! IMPORTTANT, install ripgrep tool
+# export FZF_DEFAULT_OPTS='--height=70% --preview="bat {}" --preview-window=right:40%:wrap'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.npm/*" --glob "!.git/*" --glob "!.cache/*" --glob "!~.m2/*" --glob "!*.class" --glob "!target/*" --glob "!.idea/*" --glob "!.settings/*" --glob "!.DS_Store"'
+# export FZF_DEFAULT_COMMAND='rg --f'
+
+
+# ------------------------------
+# Functions
+# ------------------------------
+function perf {
+  curl -o /dev/null -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
+}
+
+curl_time() {
+    curl -so /dev/null -w "\
+   namelookup:  %{time_namelookup}s\n\
+      connect:  %{time_connect}s\n\
+   appconnect:  %{time_appconnect}s\n\
+  pretransfer:  %{time_pretransfer}s\n\
+     redirect:  %{time_redirect}s\n\
+starttransfer:  %{time_starttransfer}s\n\
+-------------------------\n\
+        total:  %{time_total}s\n" "$@"
+}
+
+### ARCHIVE EXTRACTION
+# usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+
+fd() { local dir dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d \
+      -print 2> /dev/null | fzf +m) && cd "$dir"}
+
+# TMUX helper functions
+# Create config session with all config files
+tmux-config () {
+    ROOT_PATH="$HOME"
+    tmux has -t config 2> /dev/null
+    if [[ $? == 1 ]]; then
+        # Create a new TMUX session
+        tmux new-session -d -s config -n zsh-config     -c "$ROOT_PATH/.config"
+        tmux send-keys 'cfg-zsh' C-m
+
+        tmux new-window -n tmux-config                  -c "$ROOT_PATH/.config/tmux"
+        tmux send-keys 'cfg-tmux' C-m
+
+        tmux new-window -n vim-config                   -c "$ROOT_PATH/.config/nvim"
+        tmux send-keys 'cfg-vim' C-m
+
+        tmux new-window -n ideavim-config               -c "$ROOT_PATH/.config/nvim"
+        tmux send-keys 'cfg-ideavim' C-m
+
+        tmux new-window -n vifm-config                -c "$ROOT_PATH/.config/vifm"
+        tmux send-keys 'cfg-vifm' C-m
+
+        tmux new-window -n x-config                -c "$ROOT_PATH/.config/X"
+        tmux send-keys 'cfg-x' C-m
+
+        tmux select-window -t 1
+        tmux attach-session -t config
+    else
+        # Attaching to existing session
+        tmux attach-session -t config
+    fi
+}
+
+# Create notes session
+tmux-notes () {
+    ROOT_PATH="$HOME/Notes"
+    tmux has -t notes 2> /dev/null
+    if [[ $? == 1 ]]; then
+        # Create a new TMUX session
+        tmux new-session -d -s Work     -c "$ROOT_PATH/work"
+        tmux send-keys 'cd ~/Notes/work && vim -c "call vimwiki#base#goto_index(1)"' C-m
+
+        # Create a new TMUX session
+        tmux new-window -n Personal     -c "$ROOT_PATH/personal"
+        tmux send-keys 'cd ~/Notes/work && vim -c "call vimwiki#base#goto_index(2)"' C-m
+
+        if [[ $1 = true ]]; then
+            tmux select-window -t 1
+            tmux attach-session -t notes
+        fi
+    else
+        # Attaching to existing session
+        tmux attach-session -t notes
+    fi
+}
+
+# Create tests session
+tmux-tests () {
+    ROOT_PATH='/tmp'
+    tmux has -t tests 2> /dev/null
+    if [[ $? == 1 ]]; then
+        # Create a new TMUX session
+        tmux new-session -d -s tests     -c "$ROOT_PATH"
+
+        if [[ $1 = true ]]; then
+            tmux select-window -t 1
+            tmux attach-session -t tests
+        fi
+    else
+        # Attaching to existing session
+        tmux attach-session -t tests
+    fi
+}
+
+tmux-killall() {
+    tmux list-sessions | awk 'BEGIN{FS=":"}{print $1}' | xargs -n 1 tmux kill-session -t
+}
+
+
+ftags() {
+  local line
+  [ -e tags ] &&
+  line=$(
+    awk 'BEGIN { FS="\t" } !/^!/ {print toupper($4)"\t"$1"\t"$2"\t"$3}' tags |
+    cut -c1-80 | fzf --height 90% --nth=1,2
+  ) && ${EDITOR:-vim} $(cut -f3 <<< "$line") -c "set nocst" \
+                                      -c "silent tag $(cut -f2 <<< "$line")"
+}
+
+tm() {
+  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+  if [ $1 ]; then
+    tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
+  fi
+  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
+}
+
+fts() {
+  local session
+  session=$(tmux list-sessions -F "#{session_name}" | \
+    fzf --query="$1" --select-1 --exit-0) &&
+  tmux switch-client -t "$session"
+}
+
+ftpane() {
+  local panes current_window current_pane target target_window target_pane
+  panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
+  current_pane=$(tmux display-message -p '#I:#P')
+  current_window=$(tmux display-message -p '#I')
+
+  target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
+
+  target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
+  target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
+
+  if [[ $current_window -eq $target_window ]]; then
+    tmux select-pane -t ${target_window}.${target_pane}
+  else
+    tmux select-pane -t ${target_window}.${target_pane} &&
+    tmux select-window -t $target_window
+  fi
+}
+
+fkill() {
+    local pid
+    if [ "$UID" != "0" ]; then
+        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+    else
+        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    fi
+
+    if [ "x$pid" != "x" ]
+    then
+        echo $pid | xargs kill -${1:-9}
+    fi
+}
+
+
+# fbr - checkout git branch
+fgb() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+# fco - checkout git branch/tag
+fgco() {
+  local tags branches target
+  branches=$(
+    git --no-pager branch --all \
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+    | sed '/^$/d') || return
+  tags=$(
+    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+  target=$(
+    (echo "$branches"; echo "$tags") |
+    fzf --no-hscroll --no-multi -n 2 \
+        --ansi) || return
+  git checkout $(awk '{print $2}' <<<"$target" )
+}
+
+
+# fcoc - checkout git commit
+fgcoc() {
+  local commits commit
+  commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
+  commit=$(echo "$commits" | fzf --tac +s +m -e) &&
+  git checkout $(echo "$commit" | sed "s/ .*//")
+}
+
+# fshow - git commit browser
+fgshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+# ------------------------------
+

@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# ~/.xinitrc
+
+
+# Set the keyboard repeat and delay
+xset r rate 350 66
+
+# Remap caps lock to escape
+setxkbmap -option caps:escape
+
+# Add keyboard languages
+setxkbmap -layout us,ru -option grp:rctrl_rshift_toggle
+
+# Remap alt to win
+setxkbmap -option altwin:swap_alt_win
+
+# Swap mouse for left handed
+xmodmap -e "pointer = 1 2 3 4 5 6 7 8 9 10"
+
+# Increase the mouse wheel speed (conf file is in ~/.imwheelrc)
+imwheel
+
+export PATH="$PATH:$HOME/.local/bin"
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+export _JAVA_AWT_WM_NONREPARENTING=1
+export SUDO_ASKPASS=$HOME/.config/bin/dmenu-ask-pass.sh
+
+xdg-settings set default-web-browser firefox
+
+

@@ -1,0 +1,8 @@
+if [ "$1" == 'on' ]; then
+   sudo mount.cifs //192.168.8.1/Data ~/capsule -o vers=1.0,username=vitdevelop,sec=ntlm,uid=$USER 
+elif [ "$1" == 'off' ]; then
+    pwd = $(pwd)
+    cd ~
+    sudo umount capsule
+    cd $pwd
+fi

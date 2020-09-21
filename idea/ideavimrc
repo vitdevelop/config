@@ -1,0 +1,123 @@
+" ===== General {{{
+let mapleader = " "
+let maplocalleader = "``"
+" }}}
+
+" ===== Plugins {{{
+set surround
+set vim-multiple-cursors
+" }}}
+
+" ===== Settings {{{
+set nowrap
+set hidden
+" set nonumber
+" set norelativenumber
+set incsearch
+set hlsearch
+set tabstop=4
+set shiftwidth=4
+set autowrite
+set cursorline
+set autoread
+set splitbelow
+set splitright
+" set autochdir
+" set mouse=a
+set encoding=utf-8
+set expandtab
+" set nocompatible
+" set diffopt+=vertical
+set noignorecase
+set smartcase
+set sidescroll=1
+set scrolloff=10
+set showmode
+" set conceallevel=2
+" set switchbuf=usetab
+" set showtabline=0
+" set sessionoptions+=tabpages,globals
+set ttimeoutlen=0
+" set foldmethod=marker
+" }}}
+
+" ===== Code editing  {{{
+
+" Commenting
+nnoremap <leader>c<leader> :action CommentByLineComment<CR>
+nnoremap <leader>cm :action CommentByBlockComment<CR>i
+nnoremap <leader>cy yy :action CommentByLineComment<CR>
+vnoremap <leader>c<leader> :action CommentByLineComment<CR>
+vnoremap <leader>cm :action CommentByBlockComment<CR>
+vnoremap <leader>cy ygv :action CommentByBlockComment<CR>
+noremap <leader>fu :action FindUsages<CR>
+
+nnoremap YY "+yy
+vnoremap Y "+y
+nnoremap P "+p
+vnoremap P "+p
+" }}}
+
+" ===== Code Navigation {{{
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gb :action Back<cr>
+nnoremap gf :action Forward<cr>
+
+" nnoremap <leader><leader> :action RecentFiles<cr>
+" nnoremap <leader>gc :action GotoClass<cr>
+" nnoremap <leader>gf :action GotoFile<cr>
+" nnoremap <leader>gs :action GotoSymbol<cr>
+" nnoremap <leader>ga :action GotoAction<cr>
+" }}}
+
+" ===== Run {{{
+" nnoremap <leader>rR :action ChooseRunConfiguration<cr>
+" nnoremap <leader>rr :action Run<cr>
+" nnoremap <leader>rd :action Debug<cr>
+" nnoremap <leader>rc :action Compile<cr>
+" nnoremap <leader>rC :action CompileProject<cr>
+" }}}
+
+nmap == :action ReformatCode<CR>
+
+" ===== Actions {{{
+" nnoremap \r :action RenameElement<cr>
+" nnoremap \R :action RefactoringMenu<cr>
+" nnoremap \o :action OptimizeImports<cr>
+" nnoremap \u :action FindUsages<cr>
+" nnoremap \U :action FindUsagesInFile<cr>
+" nnoremap \g :action Generate<cr>
+" }}}
+
+" ===== Git {{{
+" nnoremap ,gp :action Git.Push<cr>
+" nnoremap ,gP :action Git.Pull<cr>
+" nnoremap ,gb :action Git.Branches<cr>
+" nnoremap ,gm :action Git.Merge<cr>
+" nnoremap ,gg :action Git.Menu<cr>
+" nnoremap ,gt :action Git.Tag<cr>
+" nnoremap ,gi :action Git.Init<cr>
+" nnoremap ,ga :action Git.Add<cr>
+" nnoremap ,gf :action Git.Fetch<cr>
+" nnoremap ,gr :action Git.Rebase<cr>
+" nnoremap ,gR :action Git.Reset<cr>
+" nnoremap ,gs :action Git.Stash<cr>
+" nnoremap ,gu :action Git.Unstash<cr>
+" }}}
+
+" ===== Maven {{{
+" nnoremap ,mm :action Maven.ExecuteGoal<cr>
+" nnoremap ,mr :action Maven.ReimportProject<cr>
+" nnoremap ,mR :action Maven.Reimport<cr>
+" }}}
+
+" ===== Easy Motion {{{
+nmap s :action KJumpAction<CR>
+" }}}
+
+" ===== Backskash {{{
+nnoremap \h :noh<CR>
+" }}}
+
+

@@ -1,0 +1,185 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+
+# Bookmarks:
+b/home/vitdevelop/
+	h
+	1600682261
+b/home/vitdevelop/Notes
+	n
+	1600682261
+b/home/vitdevelop/.config
+	c
+	1600682261
+b/home/vitdevelop/.config/install
+	i
+	1600682261
+b/tmp
+	t
+	1600682261
+b/usr
+	u
+	1600682261
+b/etc
+	e
+	1600682261
+
+# TUI:
+al
+q0
+v1
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/vitdevelop
+	Workspace
+8
+d/home/vitdevelop/Workspace
+	c++
+1
+d/home/vitdevelop
+	Workspace
+8
+d/home
+	vitdevelop
+6
+d/home/vitdevelop
+	VirtualBox
+7
+d/home
+	Cloud_MailRu
+0
+d/home/Cloud_MailRu
+	work
+0
+d/home/Cloud_MailRu/work
+	..
+0
+d/home/Cloud_MailRu
+	work
+0
+d/home
+	vitdevelop
+7
+d/home/home
+	vitdevelop
+0
+d/home/home/vitdevelop
+	.config
+6
+d/home/home/vitdevelop/.config
+	nvim
+36
+d/home/home/vitdevelop/.config/nvim
+	functions.vim
+3
+d/home/vitdevelop
+	Downloads
+16
+d
+
+# Right window history (oldest to newest):
+D/home/vitdevelop
+	.vim
+17
+D/home/vitdevelop/.vim
+	plugged
+0
+D/home/vitdevelop
+	.config
+1
+D/home/vitdevelop/.config
+	nvim
+31
+D/home/vitdevelop/.config/nvim
+	functions.vim
+2
+D/home/vitdevelop/.config
+	nvim
+31
+D/home/vitdevelop
+	Downloads
+20
+D/home/vitdevelop/Downloads
+	..
+0
+D/home/vitdevelop
+	.local
+8
+D/home/vitdevelop/.local
+	freeoffice
+1
+D/home/vitdevelop
+	.config
+1
+D/home/vitdevelop/.config
+	JetBrains
+3
+D/home/vitdevelop/.config/JetBrains
+	IntelliJIdea2020.2
+0
+D/home/vitdevelop/.config
+	Slack
+5
+D/home/vitdevelop
+	.config
+1
+D
+
+# Command line history (oldest to newest):
+:D
+:d
+:.,.+1q
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/vitdevelop/.trash/000_freeoffice2018.tar.lzma
+""/home/vitdevelop/.trash/000_ideaIU-2020.2.2.tar.gz
+""/home/vitdevelop/.trash/000_installfreeoffice
+""/home/vitdevelop/.trash/000_softmaker-freeoffice-978-amd64.tgz
+""/home/vitdevelop/.trash/000_ТЗ статистика_базовый вариант_2020_01_15.bak
+""/home/vitdevelop/.trash/000_ТЗ статистика_базовый вариант_2020_01_15.docx
+""/home/vitdevelop/.trash/000_ТЗ статистика_базовый вариант_2020_01_15_edited.docx
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/vitdevelop/.trash/000_virtualbox_VMs
+	/home/virtualbox_VMs
+t/home/vitdevelop/.trash/000_libvirt_VMs
+	/home/libvirt_VMs
+t/home/vitdevelop/.trash/000_freeoffice2018.tar.lzma
+	/home/vitdevelop/Downloads/freeoffice2018.tar.lzma
+t/home/vitdevelop/.trash/000_ideaIU-2020.2.2.tar.gz
+	/home/vitdevelop/Downloads/ideaIU-2020.2.2.tar.gz
+t/home/vitdevelop/.trash/000_installfreeoffice
+	/home/vitdevelop/Downloads/installfreeoffice
+t/home/vitdevelop/.trash/000_softmaker-freeoffice-978-amd64.tgz
+	/home/vitdevelop/Downloads/softmaker-freeoffice-978-amd64.tgz
+t/home/vitdevelop/.trash/000_ТЗ статистика_базовый вариант_2020_01_15.bak
+	/home/vitdevelop/Downloads/ТЗ статистика_базовый вариант_2020_01_15.bak
+t/home/vitdevelop/.trash/000_ТЗ статистика_базовый вариант_2020_01_15.docx
+	/home/vitdevelop/Downloads/ТЗ статистика_базовый вариант_2020_01_15.docx
+t/home/vitdevelop/.trash/000_ТЗ статистика_базовый вариант_2020_01_15_edited.docx
+	/home/vitdevelop/Downloads/ТЗ статистика_базовый вариант_2020_01_15_edited.docx
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].0
+]F
+s0

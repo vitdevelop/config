@@ -1,0 +1,40 @@
+* {
+  border-color: #404040 !important;
+  background-color: #202020 !important;
+  color: #F5F5F5 !important;
+}
+a {
+  color: #6495ED !important;
+}
+a:visited {
+  color: #6495ED !important;
+}
+a:hover {
+  background-color: #404040 !important;
+  color: #6495ED !important;
+}
+body {
+  background-color: #202020 !important;
+  color: #F5F5F5 !important;
+}
+html {
+  background-color: #202020 !important;
+}
+div {
+  background-color: #202020 !important;
+  color: #F5F5F5 !important;
+}
+input,
+textarea {
+  background-color: #202020 !important;
+  color: #F5F5F5 !important;
+}
+blockquote,
+pre {
+  background-color: #252525 !important;
+  color: #F5F5F5 !important;
+}
+button {
+  background-color: #252525 !important;
+  color: #F5F5F5 !important;
+}

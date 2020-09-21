@@ -1,0 +1,11 @@
+● mother-led.service - Visualize motherboard leds
+     Loaded: loaded (/home/vitdevelop/scripts/motherboard_led/motherboard_led.service; bad; vendor preset: disabled)
+     Active: failed (Result: exit-code) since Fri 2020-08-21 17:27:34 EEST; 42s ago
+    Process: 136200 ExecStart=/usr/bin/python /home/vitdevelop/scripts/motherboard_led/demo.py (code=exited, status=1/FAILURE)
+   Main PID: 136200 (code=exited, status=1/FAILURE)
+
+Aug 21 17:27:34 vitdevelop-pc systemd[1]: mother-led.service: Scheduled restart job, restart counter is at 5.
+Aug 21 17:27:34 vitdevelop-pc systemd[1]: Stopped Visualize motherboard leds.
+Aug 21 17:27:34 vitdevelop-pc systemd[1]: mother-led.service: Start request repeated too quickly.
+Aug 21 17:27:34 vitdevelop-pc systemd[1]: mother-led.service: Failed with result 'exit-code'.
+Aug 21 17:27:34 vitdevelop-pc systemd[1]: Failed to start Visualize motherboard leds.

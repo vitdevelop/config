@@ -1,0 +1,357 @@
+only
+colorscheme = gruvbox
+
+" Options
+" ==========================================================================
+set millerview
+" set milleroptions+=rpreview:all
+set vicmd=nvim
+set trash
+set trashdir=~/.trash
+set undolevels=1000
+set dotdirs=
+set vimhelp
+set nofollowlinks
+set runexec
+set timefmt=%y.%m.%d\ %H:%M:%S
+set wildmenu
+set wildstyle=popup
+set ignorecase
+set smartcase
+set nohlsearch
+set incsearch
+set scrolloff=4
+set nowrap
+set rulerformat='%2l-%S%[ +%x%]'
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+
+" what should be saved automatically between vifm runs
+set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,phistory,fhistory
+           \,dirstack,registers,bookmarks,bmarks
+
+" perform file operations via system calls
+set syscalls
+
+" mount FUSE file-systems here
+set fusehome=~/.vifm/.fuse
+
+" ignore .git directory on :find
+set findprg='find %s %a -print ,
+            \ -type d \( ! -readable -o ! -executable -o -path "*/.git" \)
+            \ -prune'
+" ==========================================================================
+
+
+" Icons
+" ==========================================================================
+set classify='  :dir:/,  :exe:, :reg:, :link:'
+
+" system
+set classify+=' ::../::,  ::*.sh::, ::*.ttf::'
+
+" source
+set classify+=' ::/^copying|license$/::, ::.git/,,*.git/::/'
+
+" book
+set classify+=' ::*.epub,,*.fb2,,*.djvu::, ::*.pdf::'
+
+" programming
+set classify+=' ::*.css::, ::*.js::, ::*.java::,  ::Jenkinsfile::,  ::Dockerfile::,  ::*.md::,
+              \  ::*.php::, ::*.py::,  ::*.swift::,  ::*.rust::,
+              \ ::*.htm,,*.html,,**.[sx]html,,*.xml::'
+
+" archives
+set classify+=' ::*.7z,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,
+              \*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.taz,,
+              \*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,
+              \*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
+" images
+set classify+=' ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,
+              \*.svgz,,*.tga,,*.tif,,*.tiff,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,
+              \*.xwd::'
+" audio
+set classify+=' ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,
+              \*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,
+              \*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
+" media
+set classify+=' ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,
+              \*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,
+              \*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm::'
+" office files
+set classify+=' ::*.doc,,*.docx::, ::*.xls,,*.xls[mx]::,
+              \ ::*.pptx,,*.ppt::'
+" ==========================================================================
+
+" Bookmarks
+" ==========================================================================
+" bmark h ~/
+bmark! ~/ h
+bmark! ~/Notes n
+bmark! ~/.config c
+bmark! ~/.config/install i
+bmark! /tmp t
+bmark! /usr u
+bmark! /etc e
+" ==========================================================================
+
+" Mappings
+" ==========================================================================
+" display sorting dialog
+nnoremap <silent> S :sort<cr>
+
+" force file editing rather than opening it
+nnoremap E :edit<cr>
+
+" New tab
+map tn :tabnew<cr>
+
+" Close tab
+map tc :tabclose<cr>
+
+" toggle visibility of preview window
+nnoremap <silent> <Space> :vs<cr>
+vnoremap <silent> w :only<cr> :view<cr>gv
+
+" PDF scroling
+map > :!vifmimg inc<CR>
+map < :!vifmimg dec<CR>
+
+" reload config
+nnoremap ,! :write | restart<cr>
+
+nnoremap <space>t :!alacritty &<cr>
+
+nnoremap * ggVG
+
+" toggle notes
+nnoremap <silent> <C-x>n  : set nomillerview | vsplit | bmgo n<cr>
+nnoremap <silent> <C-x>N  : set millerview | only | bmgo h<cr>
+
+nnoremap <silent> <space>ww :only<cr> :view<cr>gv
+
+nnoremap <silent> <space>wp  : if system('echo '.&milleroptions.' | grep rpreview:all')
+                    \|     set milleroptions-=rpreview:all
+                    \| else
+                    \|     set milleroptions+=rpreview:all
+                    \| endif<cr>
+
+
+nnoremap <silent> <space>wm  : if system('echo '.&millerview.' | grep 0')
+                    \|     set millerview
+                    \| else
+                    \|     set nomillerview
+                    \| endif<cr>
+
+nnoremap <silent> <space>wl  : if system('echo '.&lsview.' | grep 0')
+                    \|     set nomillerview
+                    \|     set lsview
+                    \| else
+                    \|     set nolsview
+                    \| endif<cr>
+
+nnoremap <silent> <space>ws  : split<cr>
+nnoremap <silent> <space>wv  : vsplit<cr>
+nnoremap <silent> <space>wo  : only<cr>
+
+nnoremap <silent> <A-h>  : wincmd -<cr>
+nnoremap <silent> <A-l>  : wincmd +<cr>
+nnoremap <silent> <A-j>  : wincmd <<cr>
+nnoremap <silent> <A-k>  : wincmd ><cr>
+nnoremap <silent> <C-k>  : wincmd K<cr>
+nnoremap <silent> <C-j>  : wincmd J<cr>
+nnoremap <silent> <C-h>  : wincmd H<cr>
+nnoremap <silent> <C-l>  : wincmd L<cr>
+
+command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('locate $HOME | fzf --height 10 2>/dev/tty'))
+command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('find | fzf 2>/dev/tty'))
+
+nnoremap <c-g> :FZFlocate<cr>
+nnoremap <c-f> :FZFfind<cr>
+
+" Yank current directory path into the clipboard
+" nnoremap yd :!echo %d | xclip %i<cr>
+
+" Yank current file path into the clipboard
+" nnoremap yf :!echo %c:p | xclip %i<cr>
+
+" Yank current file name into the clipboard
+" nnoremap yn :!echo %c:p | xclip %i<cr>
+" ==========================================================================
+
+
+" File types and viewers
+" ==========================================================================
+" Man page
+filetype *.[1-8] man ./%c
+fileviewer *.[1-8] man ./%c | col -b
+
+filextype *.html,*.htm
+          \ {Open with firefox}
+          \ qutebrowser %f &,
+
+" MD5
+filetype *.md5
+       \ {Check MD5 hash sum}
+       \ md5sum -c %f %S,
+
+" SHA1
+filetype *.sha1
+       \ {Check SHA1 hash sum}
+       \ sha1sum -c %f %S,
+
+" SHA256
+filetype *.sha256
+       \ {Check SHA256 hash sum}
+       \ sha256sum -c %f %S,
+
+" SHA512
+filetype *.sha512
+       \ {Check SHA512 hash sum}
+       \ sha512sum -c %f %S,
+
+" GPG signature
+filetype *.asc
+       \ {Check signature}
+       \ !!gpg --verify %c,
+
+" FuseZipMount
+filetype *.zip,*.jar,*.war,*.ear,*.oxt,*.apkg
+       \ {Mount with fuse-zip}
+       \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
+       \ {View contents}
+       \ zip -sf %c | less,
+       \ {Extract here}
+       \ unzip %c,
+fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
+
+" ArchiveMount
+filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz
+       \ {Mount with archivemount}
+       \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
+fileviewer *.tgz,*.tar.gz tar -tzf %c
+fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
+fileviewer *.tar.txz,*.txz xz --list %c
+fileviewer *.tar tar -tf %c
+
+
+" Audio
+filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
+       \ {Play using ffplay}
+       \ ffplay -nodisp -autoexit %c,
+fileviewer *.mp3 mp3info
+fileviewer *.flac soxi
+
+fileviewer <audio/*>
+        \ vifmimg audiopreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+" Video
+filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+         \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+         \*.as[fx]
+        \ {View using mplayer}
+        \ mplayer %f %i &,
+fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+          \*.as[fx]
+        \ vifmimg videopreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+        " \ ffprobe -pretty %c 2>&1
+
+
+" PDF
+fileviewer *.pdf
+        \ vifmimg pdfpreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+filetype *.pdf
+       \ {View with Evince}
+       \ evince %c %i &,
+
+" Epub
+fileviewer *.epub
+        \ vifmimg epubpreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+filetype *.epub
+       \ {View with Evince}
+       \ evince %c %i &,
+
+" Images
+fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
+        \ vifmimg draw %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+filetype *.bmp,*.jpg,*.jpeg,*.png,*.xpm,*.gif,*.ico
+       \ {View with sxiv}
+       \ sxiv %c %i &,
+
+fileviewer *.gif
+        \ vifmimg gifpreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+fileviewer *.ico
+        \ vifmimg magickpreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+" Fonts
+fileviewer <font/*>
+        \ vifmimg fontpreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+" ==========================================================================
+"
+
+" STATUS LINE "
+"""""""""""""""
+
+" COLORS "
+""""""""""
+
+" USER COLORS "
+"""""""""""""""
+highlight User1      ctermbg=214         ctermfg=232        cterm=none
+highlight User2      ctermbg=240          ctermfg=34         cterm=none
+highlight User3      ctermbg=242          ctermfg=15         cterm=none
+highlight User4      ctermbg=237          ctermfg=26         cterm=none
+highlight User5      ctermbg=23          ctermfg=magenta    cterm=none
+highlight User6      ctermbg=magenta     ctermfg=23         cterm=none
+highlight User7      ctermbg=15          ctermfg=34         cterm=none
+highlight User8      ctermbg=magenta     ctermfg=white      cterm=none
+highlight User9      ctermbg=242          ctermfg=15        cterm=none
+
+"""""""""""""""""
+"   SEGMENTS    "
+"""""""""""""""""
+
+" LEFT SEGMENT "
+""""""""""""""""
+let $CUR_DIR="%1* %t %2*"               " current dir
+let $CUR_FILE_SZ="%3* %E %4*"       " current file size
+
+" SEPARATOR "
+"""""""""""""
+let $SEPARATOR="%="                 " middle separator
+
+" RIGHT SEGMENT "
+"""""""""""""""""
+let $PERMS="%9* %A "            " perms
+let $USER="%1* %u "                 " user
+
+
+" GIT SUPPORT "
+"""""""""""""""
+" let $GIT="%5* %{system('sh ~/.config/vifm/scripts/GitStatus.sh')} %6*"
+
+
+" SET STATUSLINE "
+""""""""""""""""""
+" execute 'set' 'statusline="' . $CUR_DIR . $CUR_FILE_SZ . $GIT . $SEPARATOR . $PERMS . $USER .'"'
+execute 'set' 'statusline="' . $CUR_DIR . $CUR_FILE_SZ . $SEPARATOR . $PERMS . $USER .'"'
+

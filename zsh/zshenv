@@ -1,0 +1,54 @@
+export LANG=en_US.UTF-8
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/go/bin"
+export PATH="$PATH:$HOME/.local/idea/bin"
+
+export GOPATH="$HOME/.local/go"
+export GO111MODULE="on"
+
+# Default Apps
+export EDITOR='nvim'
+export VISUAL='nvim'
+export TERMINAL='alacritty'
+export READER='evince'
+export BROWSER='qutebrowser'
+export VIDEO='mpv'
+export IMAGE='sxiv'
+export OPENER='xdg-open'
+export PAGER='less'
+export WM='bspwm'
+
+# Clipboard Manager
+export CM_SELECTION="clipboard"
+export CM_DEBUG=0
+export CM_OUTPUT_CLIP=0
+export CM_MAX_CLIPS=10
+export CM_LAUNCHER="rofi-script"
+
+# Preferred editor remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+fi
+
+# Input prompt of fuzzy searcher
+export FONTPREVIEW_SEARCH_PROMPT="❯ "
+
+# Size of the font preview window
+export FONTPREVIEW_SIZE=532x365
+
+# The position where the font preview window should be displayed
+export FONTPREVIEW_POSITION="+0+0"
+
+# Font size
+export FONTPREVIEW_FONT_SIZE=38
+
+# Background color of the font preview window
+export FONTPREVIEW_BG_COLOR="#ffffff"
+
+# Foreground color of the font preview window
+export FONTPREVIEW_FG_COLOR="#000000"
+
+# Preview text that should be displayed in the font preview window
+export FONTPREVIEW_PREVIEW_TEXT="ABCDEFGHIJKLM\nNOPQRSTUVWXYZ\nabcdefghijklm\nnopqrstuvwxyz\n1234567890\n!@$\%(){}[]"
+

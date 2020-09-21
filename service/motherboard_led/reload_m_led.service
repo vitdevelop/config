@@ -1,0 +1,11 @@
+[Unit]
+Description=Restart services which requires mounted fs
+Requires=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl daemon-reload
+ExecStartPost=/bin/systemctl start m_led.service
+
+[Install]
+WantedBy=multi-user.target

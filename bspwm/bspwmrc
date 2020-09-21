@@ -1,0 +1,40 @@
+#! /bin/sh
+
+# sxhkd
+sxhkd &
+
+## Enable clipboard manager
+clipmenud &
+
+ Polybar
+$HOME/.config/polybar/launch.sh
+
+# Picom
+picom --config ~/.picom.conf &
+
+source ~/.xprofile
+
+# Background
+# nitrogen --set-centered /usr/share/backgrounds/archlinux/archlinux-simplyblack.png &
+nitrogen --set-centered /usr/share/backgrounds/archlinux/archlinux-simplyblack.png &
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config border_width         1
+bspc config window_gap          10
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+# bspc config normal_border_color  \#FFFFFF
+# bspc config active_border_color  \#FFFFFF
+bspc config presel_feedback_color \#404040
+
+bspc rule -a Evolution desktop='^10' follow=on
+bspc rule -a Skype desktop='^9' follow=on
+bspc rule -a TelegramDesktop desktop='^9' follow=on
+bspc rule -a Gimp desktop='^8' follow=on
+bspc rule -a rawtherapee desktop='^8' follow=on
+bspc rule -a Screenkey manage=off
+# bspc rule -a jetbrains-idea desktop='^4' follow=on
+# bspc rule -a Gimp desktop='^8' state=floating follow=on

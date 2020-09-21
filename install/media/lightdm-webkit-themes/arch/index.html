@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Vitalie Mudrenco">
+
+        <title>Arch - Lightdm Webkit Greeter Theme</title>
+
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="js/mock.js"></script>
+        <script src="js/main.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/arch-theme.css" />
+    </head>
+    <body>
+      <div id="main">
+        <img width="100%" src="/usr/share/backgrounds/archlinux/archlinux-cloud.png" />
+        <div id="inputBox" style="display:none;opacity: 0.6;">
+            <div>
+                <input type="text" name="username" id="username" class="form-control">
+            </div>
+            <div>
+                <input type="password" name="password" id="password" class="form-control">
+            </div>
+            <div id="session">
+              Session: <span id="sessionName" style="" ></span>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
