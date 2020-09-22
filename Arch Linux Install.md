@@ -82,18 +82,52 @@
 ---
 
 ## Apply configuration
+#### 1. Configure network
+Create file `/etc/systemd/network/<interface_name>.network`  
+```
+[Match]
+Name=interface_name
 
-#### 1. Clone the config repo
+[Network]
+Address=192.168.1.2
+Gateway=192.168.1.1/24
+DNS=192.168.1.1
+DNS=8.8.8.8
+DNS=8.8.4.4
+```
+
+Edit /etc/resolv.conf  
+```
+nameserver 192.168.1.1
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```  
+Start and enable network service  
+`systemctl start systemd-networkd.service`  
+`systemctl enable systemd-networkd.service`  
+
+#### 2. Create user
+`useradd -m -U -G wheel -u 1000 username`
+
+#### 3. Enable sudo
+Set visudo editor  
+`export EDITOR=nvim`  
+
+Execute `visudo` and uncomment line `# %wheel ALL=(ALL) ALL`
+
+#### 3. Login with your user
+
+#### 4. Clone the config repo
 `git clone https://github.com/vitdevelop/config`
 
-#### 2. Cd to install directory
+#### 5. Cd to install directory
 `cd config/install`
 
-#### 3. Run the configuration
+#### 6. Run the configuration
 `sh install.sh`
 
-#### 4. Reboot
+#### 7. Reboot
 
-#### 5. After booting into the UI, run the `post-install.sh` script
+#### 8. After booting into the UI, run the `post-install.sh` script
 `cd .config/install`  
 `sh post-install.sh`

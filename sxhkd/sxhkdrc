@@ -147,10 +147,10 @@ super + {Left,Down,Up,Right}
 
 # Applications
 # -------------------------------------------------
-super + alt + shift + b
+super + shift + b
 	firefox
 
-super + shift + b
+super + alt + shift + b
 	qutebrowser
 
 super + shift + e

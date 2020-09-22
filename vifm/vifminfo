@@ -5,25 +5,25 @@
 # Bookmarks:
 b/home/vitdevelop/
 	h
-	1600682261
+	1600808135
 b/home/vitdevelop/Notes
 	n
-	1600682261
+	1600808135
 b/home/vitdevelop/.config
 	c
-	1600682261
+	1600808135
 b/home/vitdevelop/.config/install
 	i
-	1600682261
+	1600808135
 b/tmp
 	t
-	1600682261
+	1600808135
 b/usr
 	u
-	1600682261
+	1600808135
 b/etc
 	e
-	1600682261
+	1600808135
 
 # TUI:
 al
@@ -78,8 +78,8 @@ d/home/home/vitdevelop/.config/nvim
 	functions.vim
 3
 d/home/vitdevelop
-	Downloads
-16
+	.picom.conf
+36
 d
 
 # Right window history (oldest to newest):
