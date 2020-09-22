@@ -96,8 +96,8 @@ Create file `/etc/systemd/network/<interface_name>.network`
 Name=interface_name
 
 [Network]
-Address=192.168.1.2
-Gateway=192.168.1.1/24
+Address=192.168.1.2/24
+Gateway=192.168.1.1
 DNS=192.168.1.1
 DNS=8.8.8.8
 DNS=8.8.4.4
