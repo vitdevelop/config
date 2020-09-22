@@ -28,10 +28,14 @@
 `mount /dev/sda3 /mnt/home`
 
 #### 6. Install base packages
-`pacstrap /mnt base base-devel intel-ucode linux linux-headers linux-firmware grub efibootmgr neovim git`
+`pacstrap /mnt base base-devel linux linux-headers linux-firmware grub efibootmgr neovim git`
+
 > Microcode need to be installed if you have intel or amd  
-> Intel -> intel-ucode  
-> AMD -> amd-ucode 
+> Intel -> `intel-ucode`  
+> AMD -> `amd-ucode`  
+> 
+> ---  
+> If you need DHCP, install `dhcpcd`
 
 #### 7. Generate fstab file
 `genfstab -U /mnt >> /mnt/etc/fstab`
@@ -46,21 +50,23 @@
 `hwclock --systohc`
 
 #### 11. Edit file `/etc/locale.gen` and uncomment the following line
-> en_US.UTF-8
+`en_US.UTF-8`
 
 #### 12. Generate locale files
 `locale-gen`
 
 #### 13. Create a file `/etc/locale.conf` with the following content
-> LANG=en_US.UTF-8
+`LANG=en_US.UTF-8`
 
 #### 14. Edit file `/etc/hostname` and write the following content
-> arch-workstation
+`arch-workstation`
 
 #### 15. Edit file `/etc/hosts` and write the following content
-> 127.0.0.1     localhost  
-> ::1           localhost  
-> 127.0.1.1     arch-workstation.localdomain arch-workstation
+```
+127.0.0.1     localhost  
+::1           localhost  
+127.0.1.1     arch-workstation.localdomain arch-workstation
+```
 
 #### 16. Set root password
 `passwd`
@@ -83,10 +89,11 @@
 
 ## Apply configuration
 #### 1. Configure network
+##### Static IP
 Create file `/etc/systemd/network/<interface_name>.network`  
 ```
 [Match]
-Name=interface_name
+Name=&ltinterface_name&gt
 
 [Network]
 Address=192.168.1.2
@@ -96,15 +103,25 @@ DNS=8.8.8.8
 DNS=8.8.4.4
 ```
 
-Edit /etc/resolv.conf  
+Edit `/etc/resolv.conf`  
 ```
 nameserver 192.168.1.1
 nameserver 8.8.8.8
 nameserver 8.8.4.4
 ```  
 Start and enable network service  
-`systemctl start systemd-networkd.service`  
-`systemctl enable systemd-networkd.service`  
+```
+systemctl start systemd-networkd.service
+systemctl enable systemd-networkd.service
+```
+##### Dynamic IP
+Start and enable dhcp and network service  
+```
+systemctl start dhcpcd.service
+systemctl enable dhcpcd.service
+systemctl start systemd-networkd.service
+systemctl enable systemd-networkd.service
+```
 
 #### 2. Create user
 `useradd -m -U -G wheel -u 1000 username`
