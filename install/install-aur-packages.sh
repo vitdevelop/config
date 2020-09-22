@@ -10,22 +10,22 @@ func_print "Installation of AUR software" 4
 ###############################################################################
 
 packages=(
-pulseaudio-ctl
-polybar
-archlinux-wallpaper
-slack-desktop
-skypeforlinux-stable-bin
-kops
-kind
 arch-silence-grub-theme-git
+archlinux-wallpaper
 betterlockscreen
-sxiv-rifle
-golangci-lint-bin
-pv
-poppler
 docker-credential-pass
-jvmtop
+golangci-lint-bin
 insomnia
+jvmtop
+kind
+kops
+polybar
+poppler
+pulseaudio-ctl
+pv
+skypeforlinux-stable-bin
+slack-desktop
+sxiv-rifle
 )
 
 func_iterate_install_aur "${packages[@]}"

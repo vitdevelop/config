@@ -84,7 +84,7 @@
 ## Apply configuration
 
 #### 1. Clone the config repo
-`git clone https://github.com/xvitcoder/config`
+`git clone https://github.com/vitdevelop/config`
 
 #### 2. Cd to install directory
 `cd config/install`
