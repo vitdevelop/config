@@ -93,7 +93,7 @@
 Create file `/etc/systemd/network/<interface_name>.network`  
 ```
 [Match]
-Name=&ltinterface_name&gt
+Name=interface_name
 
 [Network]
 Address=192.168.1.2
