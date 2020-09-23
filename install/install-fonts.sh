@@ -24,9 +24,12 @@ ttf-ubuntu-font-family
 tamsyn-font
 ttf-jetbrains-mono
 ttf-font-awesome
+ttf-nerd-fonts-symbols
 )
 
 func_iterate_install "${packages[@]}"
+
+# mkdir -p $HOME/.local/share/fonts
 
 ###############################################################################
 

@@ -1,5 +1,8 @@
 # Arch linux installation instruction
 
+> If on boot from usb stuck on message `triggering uevents`  
+> in grub menu press `e` and append `nomodeset` to end of line.  
+
 ## Install base system
 
 #### 1. Check if EFI is supported
@@ -9,6 +12,19 @@
 #### 2. Check if internet is reachable
 `ip link`  
 `ping google.com`
+
+---
+If you doesn't have possiblity to connect throught cable and have wireless use instructions:
+```
+iwctl
+device-list (should output wlan0)
+station wlan0 scan
+station wlan0 get-networks (should output your Wireless Point Name[wp_name])
+station wlan0 connect wp_name
+```
+If prompt passphrase enter and then exit from `iwctl`  
+
+---
 
 #### 3. Partition the Disk (`/dev/sda` or `/dev/nvme0n1`)
 `fdisk -l /dev/sda`  
@@ -88,6 +104,11 @@
 ---
 
 ## Apply configuration
+
+> If you encounter at the start problem with `triggering uevents`  
+> now same edit grub pressing `e` and find line where is `quiet splash` or one of this  
+> and before it write `nomodeset` and press `F10` to boot
+
 #### 1. Configure network
 ##### Static IP
 Create file `/etc/systemd/network/<interface_name>.network`  
@@ -126,25 +147,28 @@ systemctl enable systemd-networkd.service
 #### 2. Create user
 `useradd -m -U -G wheel -u 1000 username`
 
-#### 3. Enable sudo
+#### 3. Set user password
+`passwd username`
+
+#### 4. Enable sudo
 Set visudo editor  
 `export EDITOR=nvim`  
 
 Execute `visudo` and uncomment line `# %wheel ALL=(ALL) ALL`
 
-#### 3. Login with your user
+#### 5. Login with your user
 
-#### 4. Clone the config repo
+#### 6. Clone the config repo
 `git clone https://github.com/vitdevelop/config`
 
-#### 5. Cd to install directory
+#### 7. Cd to install directory
 `cd config/install`
 
-#### 6. Run the configuration
+#### 8. Run the configuration
 `sh install.sh`
 
-#### 7. Reboot
+#### 9. Reboot
 
-#### 8. After booting into the UI, run the `post-install.sh` script
+#### 10. After booting into the UI, run the `post-install.sh` script
 `cd .config/install`  
 `sh post-install.sh`

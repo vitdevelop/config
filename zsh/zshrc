@@ -79,7 +79,7 @@ alias cfg-install="nvim ~/.config/install/install.sh"
 alias cfg-qutebrowser="nvim ~/.config/qutebrowser/config.py"
 alias cfg-vifm="nvim ~/.config/vifm/vifmrc"
 
-alias ce="find ~/.config -type f | grep -Ev \".git/|`cat .config/.gitignore | sed '/^$/d' | sed 's/.*/&/' | tr '\n' '|' | sed '$s/|$/\n/'`\" | fzf --preview='bat --color=always --style=header,grid --line-range :300 {}' | xargs -r $EDITOR"
+alias ce="find ~/.config -type f | grep -Ev \".git/|`cat ~/.config/.gitignore | sed '/^$/d' | sed 's/.*/&/' | tr '\n' '|' | sed '$s/|$/\n/'`\" | fzf --preview='bat --color=always --style=header,grid --line-range :300 {}' | xargs -r $EDITOR"
 
 # Reload Configuration Files
 alias reload-cfg-zsh="source ~/.zshrc"
@@ -421,5 +421,3 @@ fgshow() {
                 {}
 FZF-EOF"
 }
-# ------------------------------
-

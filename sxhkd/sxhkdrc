@@ -157,7 +157,7 @@ super + shift + e
 	evolution
 
 
-# Start Thunar UI file manager
+# Start Nautilus UI file manager
 super + alt + shift + Return
     nautilus
 

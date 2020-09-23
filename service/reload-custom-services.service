@@ -1,0 +1,11 @@
+[Unit]
+Requires=local-fs.target
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl daemon-reload
+ExecStart=/bin/sh /home/vitdevelop/.config/service/run-custom-services.sh >> /tmp/custom-service.log
+
+[Install]
+WantedBy=multi-user.target

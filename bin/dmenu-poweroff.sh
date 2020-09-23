@@ -2,7 +2,7 @@
 
 choices=" Lock\n Logout\n Suspend\n Reboot\n Poweroff"
 
-chosen=$(echo -e "$choices" | dmenu -fn 'JetBrains Mono:Regular:size=14' -p ' Computer' -i)
+chosen=$(echo -e "$choices" | dmenu -fn 'Symbols Nerd Font:Regular:size=14' -p ' Computer' -i)
 
 case "$chosen" in
     *Lock) betterlockscreen -l dimblur ;;

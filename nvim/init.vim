@@ -36,7 +36,7 @@ set splitbelow
 set splitright
 set autochdir
 set mouse=a
-set encoding=utf-8
+set encoding=UTF-8
 set expandtab
 set nocompatible
 set diffopt+=vertical
