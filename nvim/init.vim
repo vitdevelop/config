@@ -85,16 +85,25 @@ let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 let g:airline_theme='base16'
 " let g:airline_theme='papercolor'
-let g:airline#extensions#taboo#enabled = 1
+" let g:airline#extensions#taboo#enabled = 0
 let g:airline#extensions#vimagit#enabled = 1
 let g:airline#extensions#virtualenv#enabled = 1
-" let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#formatter = 'short_path'
+
+" Buffer Tab Selectio" 
+nmap <leader>b1 <Plug>AirlineSelectTab1
+nmap <leader>b2 <Plug>AirlineSelectTab2
+nmap <leader>b3 <Plug>AirlineSelectTab3
+nmap <leader>b4 <Plug>AirlineSelectTab4
+nmap <leader>b5 <Plug>AirlineSelectTab5
+nmap <leader>b6 <Plug>AirlineSelectTab6
+nmap <leader>b7 <Plug>AirlineSelectTab7
+nmap <leader>b8 <Plug>AirlineSelectTab8
+nmap <leader>b9 <Plug>AirlineSelectTab9
+nmap <leader>b0 <Plug>AirlineSelectTab10
 " }}}
 
 "Rainbow{{{
@@ -414,7 +423,7 @@ nnoremap <localleader><localleader>h :noh<CR>
 
 "Buffers{{{
 nnoremap <leader><leader> :Buffers<CR>
-nnoremap <silent> ]b :bNext<CR>
+nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> [B :bfirst<CR>

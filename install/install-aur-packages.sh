@@ -19,7 +19,7 @@ insomnia
 jvmtop
 kind
 kops
-nerd-fonts-complete
+# nerd-fonts-complete
 polybar
 poppler
 pulseaudio-ctl

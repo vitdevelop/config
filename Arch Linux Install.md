@@ -1,7 +1,7 @@
 # Arch linux installation instruction
 
 > If on boot from usb stuck on message `triggering uevents`  
-> in grub menu press `e` and append `nomodeset` to end of line.  
+> in grub menu press `e` and append `intel_iommu=on` or `nomodeset` to end of line.  
 
 ## Install base system
 
