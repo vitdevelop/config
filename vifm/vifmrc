@@ -3,7 +3,7 @@ colorscheme = gruvbox
 
 " Options
 " ==========================================================================
-set millerview
+" set millerview
 set quickview
 set relativenumber
 set vicmd=nvim

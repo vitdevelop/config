@@ -9,87 +9,36 @@
 # Bookmarks:
 b/home/vitdevelop/
 	h
-	1601393145
+	1601502535
 b/home/vitdevelop/Notes
 	n
-	1601393145
+	1601502535
 b/home/vitdevelop/.config
 	c
-	1601393145
+	1601502535
 b/home/vitdevelop/.config/install
 	i
-	1601393145
+	1601502535
 b/tmp
 	t
-	1601393145
+	1601502535
 b/usr
 	u
-	1601393145
+	1601502535
 b/etc
 	e
-	1601393145
+	1601502535
 
 # TUI:
-al
+ar
 q0
 v2
 ov
-m51
+m-1
 l2
 r2
 
 # Left window history (oldest to newest):
-d/home/home
-	vitdevelop
-0
-d/home/home/vitdevelop
-	Downloads
-3
-d/home/home/vitdevelop/Downloads
-	music
-6
-d/home/home/vitdevelop/Downloads/music
-	Albinoni, Adagio.mp3
-0
-d/home/home/vitdevelop/Downloads
-	kaizen
-5
-d/home/home/vitdevelop
-	Downloads
-3
-d/home/home
-	vitdevelop
-0
-d/home
-	home
-4
-d/
-	home
-4
-d/home
-	vitdevelop
-6
-d/home/vitdevelop
-	Downloads
-2
-d/home/vitdevelop/Downloads
-	Guitar
-0
-d/home/vitdevelop/Downloads/Guitar
-	eiro
-0
-d/home/vitdevelop/Downloads/Guitar/eiro
-	Hans Zimmer - Time (OST 'Inception') ⎪Epic 12 STRING GUITAR-SaZiUBfXKEs.aac
-6
-d/home/vitdevelop/Downloads/Guitar
-	eiro
-0
-d/home/vitdevelop/Downloads/Guitar/eiro
-	Linkin Park - What i've done (OST Transformers) ⎪Fingerstyle guitar cover--1IacLnkb-E.aac
-13
-d/home/vitdevelop/Downloads/Guitar
-	eiro
-0
 d/home/vitdevelop/Downloads/Guitar/eiro
 	X-Files Theme⎪Loud Fingerstyle Guitar Version-wd8U2EvnOFw.aac
 33
@@ -105,15 +54,63 @@ d/home/vitdevelop/Downloads/Guitar
 d/home/vitdevelop/Downloads/Guitar/eiro
 	Songs that became meme (Final part)⎪Fingerstyle guitar-L-fqT24IM0w.aac
 22
+d/home/vitdevelop/Downloads/Guitar
+	eiro
+0
+d/home/vitdevelop/Downloads
+	Guitar
+0
+d/home/vitdevelop
+	Downloads
+2
+d/home
+	vitdevelop
+6
+d/home/vitdevelop
+	Downloads
+2
+d/home/vitdevelop/Downloads
+	blur-grub2_fullhd
+2
+d/home/vitdevelop/Downloads/blur-grub2_fullhd
+	blur-grub2-fullhd
+0
+d/home/vitdevelop/Downloads/blur-grub2_fullhd/blur-grub2-fullhd
+	progress_bar_c.png
+3
+d/home/vitdevelop/Downloads/blur-grub2_fullhd
+	blur-grub2-fullhd
+0
+d/home/vitdevelop/Downloads
+	node_modules
+3
+d/home/vitdevelop
+	Downloads
+2
+d/home/vitdevelop/Downloads
+	blur-grub2_fullhd
+2
+d/home/vitdevelop
+	Documents
+1
+d/home
+	vitdevelop
+6
+d/home/vitdevelop
+	Documents
+1
+d/home/vitdevelop/Documents
+	Books
+0
+d/home/vitdevelop
+	Desktop
+0
+d/home/vitdevelop/Desktop
+	..
+0
 d
 
 # Right window history (oldest to newest):
-D/home/vitdevelop/Downloads
-	Telegram Desktop
-1
-D/home/vitdevelop/Documents/Books
-	Ansible_for_DevOps_by_Jeff_Geerling)_5372502_(z-lib.org).pdf
-1
 D/home/vitdevelop/Documents
 	Books
 0
@@ -177,6 +174,12 @@ D/home/vitdevelop/Downloads/Telegram Desktop
 D/home/vitdevelop/Downloads
 	Guitar
 0
+D/home/vitdevelop/Downloads/Guitar
+	Alicia_Keys__If_I_Ain_t_Got_You.aac
+0
+D/home/vitdevelop/Downloads
+	CLion-2020.2.3.tar.gz
+2
 D
 
 # Command line history (oldest to newest):
@@ -210,7 +213,7 @@ D
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/vitdevelop/.trash/000_X-Files Theme⎪Loud Fingerstyle Guitar Version-wd8U2EvnOFw.aac
+""/home/vitdevelop/.trash/000_eiro
 
 # Directory stack (oldest to newest):
 
@@ -237,6 +240,28 @@ t/home/vitdevelop/.trash/000_Books
 	/home/home/vitdevelop/Downloads/music/Books
 t/home/vitdevelop/.trash/000_X-Files Theme⎪Loud Fingerstyle Guitar Version-wd8U2EvnOFw.aac
 	/home/vitdevelop/Downloads/Guitar/eiro/X-Files Theme⎪Loud Fingerstyle Guitar Version-wd8U2EvnOFw.aac
+t/home/vitdevelop/.trash/000_blur-grub2_fullhd
+	/home/vitdevelop/Downloads/blur-grub2_fullhd
+t/home/vitdevelop/.trash/000_node_modules
+	/home/vitdevelop/Downloads/node_modules
+t/home/vitdevelop/.trash/000_apple_set_os.efi
+	/home/vitdevelop/Downloads/apple_set_os.efi
+t/home/vitdevelop/.trash/000_balena-etcher-electron-1.5.109-linux-x64.zip
+	/home/vitdevelop/Downloads/balena-etcher-electron-1.5.109-linux-x64.zip
+t/home/vitdevelop/.trash/000_blur-grub2_fullhd.tar.gz
+	/home/vitdevelop/Downloads/blur-grub2_fullhd.tar.gz
+t/home/vitdevelop/.trash/000_hato.sql
+	/home/vitdevelop/Downloads/hato.sql
+t/home/vitdevelop/.trash/000_kaizen-4.79.89-linux-x64.zip
+	/home/vitdevelop/Downloads/kaizen-4.79.89-linux-x64.zip
+t/home/vitdevelop/.trash/000_manjaro-i3-20.1-200913-linux58.iso
+	/home/vitdevelop/Downloads/manjaro-i3-20.1-200913-linux58.iso
+t/home/vitdevelop/.trash/000_package-lock.json
+	/home/vitdevelop/Downloads/package-lock.json
+t/home/vitdevelop/.trash/000_polybar_config
+	/home/vitdevelop/Downloads/polybar_config
+t/home/vitdevelop/.trash/000_eiro
+	/home/vitdevelop/Downloads/Guitar/eiro
 
 # State:
 f

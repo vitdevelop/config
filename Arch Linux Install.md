@@ -1,7 +1,7 @@
 # Arch linux installation instruction
 
 > If on boot from usb stuck on message `triggering uevents`  
-> in grub menu press `e` and append `intel_iommu=on` or `nomodeset` to end of line.  
+> in grub menu press `e` and append `intel_iommu=on` and `iommu=pt` or `nomodeset` to end of line.  
 
 ## Install base system
 
@@ -51,7 +51,8 @@ If prompt passphrase enter and then exit from `iwctl`
 > AMD -> `amd-ucode`  
 > 
 > ---  
-> If you need DHCP, install `dhcpcd`
+> If you need DHCP, install `dhcpcd`  
+> If you use wifi, install `wpa_supplicant`  
 
 #### 7. Generate fstab file
 `genfstab -U /mnt >> /mnt/etc/fstab`
@@ -107,7 +108,7 @@ If prompt passphrase enter and then exit from `iwctl`
 
 > If you encounter at the start problem with `triggering uevents`  
 > now same edit grub pressing `e` and find line where is `quiet splash` or one of this  
-> and before it write `nomodeset` and press `F10` to boot
+> and before it write `nomodeset` or `intel_iommu=on` and press `F10` to boot
 
 #### 1. Configure network
 ##### Static IP
@@ -143,6 +144,18 @@ systemctl enable dhcpcd.service
 systemctl start systemd-networkd.service
 systemctl enable systemd-networkd.service
 ```
+
+##### Wifi
+`wpa_passphrase <SSID> <password> > /etc/wpa_supplicant/example.conf`  
+Edit `/etc/wpa_supplicant/example.conf`
+```
+ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=wheel
+update_config=1
+```
+`wpa_supplicant -B -i <interface_name> -c /etc/wpa_supplicant/example.conf`
+`wpa_cli`
+`enable_network 0`
 
 #### 2. Create user
 `useradd -m -U -G wheel -u 1000 username`
