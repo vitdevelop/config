@@ -16,6 +16,7 @@
 !k9s/
 !mimeapps.list
 !nvim/
+nvim/.netrwhist
 !picom/
 !polybar/
 !pulseaudio-ctl/

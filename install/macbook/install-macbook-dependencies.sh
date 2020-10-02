@@ -11,6 +11,7 @@ func_print "Installing Macbook Dependencies"
 # Archlinux
 packages=(
     xf86-video-fbdev
+    xf86-input-synaptics
     powertop
 )
 
