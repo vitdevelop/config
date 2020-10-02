@@ -212,32 +212,31 @@ super + alt + ctrl + 8
 
 
 
+# Display Light
 # --------------------------
+XF86MonBrightnessDown
+    light -U 5
+
+XF86MonBrightnessUp
+    light -A 5
+
+
+# Keyboard Light
+# --------------------------
+XF86KbdBrightnessDown
+    kbdlight down 10
+
+XF86KbdBrightnessUp
+    kbdlight up 10
 
 
 # Puseaudio
 # --------------------------
 # Toggle mute
-#  XF86AudioMute
-#      pulseaudio-ctl mute
-#
-# # Toggle mic mute
-#  XF86AudioMicMute
-#      pulseaudio-ctl mute-input
-#
-# # Change volume
-#  XF86Audio{Raise,Lower}Volume
-#      pulseaudio-ctl {up,down} 2
+XF86AudioMute
+    pulseaudio-ctl mute
 
 # Change volume
-{F11,F12}
-    pulseaudio-ctl {down,up} 2
-
-# Mute volume
-XF86Launch0
-    pulseaudio-ctl mute
-
-# Mute volume
-F10
-    pulseaudio-ctl mute
+XF86Audio{Raise,Lower}Volume
+    pulseaudio-ctl {up,down} 2
 # --------------------------
