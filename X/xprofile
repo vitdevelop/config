@@ -10,8 +10,7 @@ xset r rate 350 66
 setxkbmap -option caps:escape
 
 # Add keyboard languages
-# setxkbmap -layout us,ru -option "grp:ralt_rshift_toggle" -option "grp:rctrl_rshift_toggle"
-setxkbmap -layout us,ru -option "ctrl:rctrl_ralt" -option "grp:ralt_rshift_toggle"
+setxkbmap -layout us,ru -option "grp:rctrl_rshift_toggle"
 
 # Remap alt to win
 setxkbmap -option altwin:swap_alt_win

@@ -211,29 +211,14 @@ super + alt + ctrl + 8
     $HOME/'.local/bin/dmenu-pass.sh'
 
 
-
-# --------------------------
-
-
 # Puseaudio
 # --------------------------
 # Toggle mute
 XF86AudioMute
     pulseaudio-ctl mute
 
-# Toggle mic mute
-XF86AudioMicMute
-    pulseaudio-ctl mute-input
-
 # Change volume
 XF86Audio{Raise,Lower}Volume
     pulseaudio-ctl {up,down} 2
 
-# Change volume
-{F11,F12}
-    pulseaudio-ctl {down,up} 2
-
-# Mute volume
-F10
-    pulseaudio-ctl mute
 # --------------------------
