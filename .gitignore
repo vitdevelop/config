@@ -27,8 +27,8 @@ nvim/.netrwhist
 !sxhkd/
 !sxiv/
 !tmux/
-vifm/vifmimgpdffile
-vifm/vifminfo
-!vifm/
+!vifm/vifmrc
+!vifm/colors/
+!vifm/scripts/
 !X/
 !zsh/

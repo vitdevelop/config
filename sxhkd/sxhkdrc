@@ -167,7 +167,7 @@ super + shift + i
 
 # Start file manager
 super + shift + Return
-    alacritty -e vifmrun
+    alacritty -e vifm
 
 
 # lockscreen

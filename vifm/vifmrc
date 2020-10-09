@@ -4,7 +4,7 @@ colorscheme = gruvbox
 " Options
 " ==========================================================================
 " set millerview
-set quickview
+windo set quickview
 set relativenumber
 set vicmd=nvim
 set trash
@@ -113,10 +113,6 @@ map tn :tabnew<cr>
 " Close tab
 map tc :tabclose<cr>
 
-" toggle visibility of preview window
-" nnoremap <silent> <Space> :vs<cr>
-" vnoremap <silent> w :only<cr> :view<cr>gv
-
 " PDF scroling
 map > :!vifmimg inc<CR>
 map < :!vifmimg dec<CR>
@@ -128,30 +124,34 @@ nnoremap <space>t :!alacritty &<cr>
 
 nnoremap * ggVG
 
-" toggle notes
-" nnoremap <silent> <C-x>n  : set nomillerview | vsplit | bmgo n<cr>
-" nnoremap <silent> <C-x>N  : set millerview | only | bmgo h<cr>
+nnoremap <silent> <space>ws  :
+            \| execute 'windo vsplit | windo set nomillerview'
+            \| if &quickview != 0
+            \|      execute 'windo set noquickview'
+            \| endif
+            \| execute 'windo clearimg'
+            \| <cr>
+nnoremap <silent> <space>wo  :
+            \| execute 'windo only | windo set millerview'
+            \| if &quickview != 0
+            \|      execute 'windo set noquickview'
+            \| endif
+            \| execute 'windo clearimg'
+            \| <cr>
 
-" nnoremap <silent> <space>ww :only<cr> :view<cr>gv
+" TODO dynamically disable slow previews(audio, video, pdf, big files)
+" Also if possible replace all cirala/vifmimg to other functional,
+" because of inactivity of cirala
 
-" nnoremap <silent><space>wp :set milleroptions^=rpreview:all<cr> :clearimg<cr>
-
-" nnoremap <silent> <space>wm  : if system('echo '.&millerview.' | grep 0')
-"                     \|     set millerview
-"                     \| else
-"                     \|     set nomillerview
-"                     \| endif<cr>
-"
-" nnoremap <silent> <space>wl  : if system('echo '.&lsview.' | grep 0')
-"                     \|     set nomillerview
-"                     \|     set lsview
-"                     \| else
-"                     \|     set nolsview
-"                     \| endif<cr>
-
-" nnoremap <silent> <space>w" s  : split<cr>
-" nnoremap <silent> <space>wv  : vsplit<cr>
-" nnoremap <silent> <space>wo  : only<cr>
+" toggle visibility of preview window
+nnoremap <silent> <space>wp  :
+            \| if &quickview == 0
+            \|      execute 'windo vsplit | windo set nomillerview'
+            \| else
+            \|      execute 'windo only | windo set millerview'
+            \| endif
+            \| execute ' set quickview! | windo clearimg '
+            \| <cr>
 
 nnoremap <silent> <A-h>  : wincmd -<cr>
 nnoremap <silent> <A-l>  : wincmd +<cr>
