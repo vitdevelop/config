@@ -22,10 +22,7 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
-	bspc node -{c,k}
-
-# alternate between the tiled and monocle layout
+super + {_,shift + }w bspc node -{c,k} # alternate between the tiled and monocle layout
 # super + m
 	# bspc desktop -l next
 
@@ -221,4 +218,16 @@ XF86AudioMute
 XF86Audio{Raise,Lower}Volume
     pulseaudio-ctl {up,down} 2
 
+# Dunstctl
 # --------------------------
+# Close last notification
+ctrl + space
+    dunstctl close
+
+# Close all notifications
+ctrl + shift + space
+    dunstctl close-all
+
+# Pop one notification from history
+ctrl + grave
+    dunstctl history-pop
