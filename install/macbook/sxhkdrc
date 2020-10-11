@@ -239,4 +239,18 @@ XF86AudioMute
 # Change volume
 XF86Audio{Raise,Lower}Volume
     pulseaudio-ctl {up,down} 2
+
+
+# Dunstctl
 # --------------------------
+# Close last notification
+ctrl + space
+    dunstctl close
+
+# Close all notifications
+ctrl + shift + space
+    dunstctl close-all
+
+# Pop one notification from history
+ctrl + grave
+    dunstctl history-pop
