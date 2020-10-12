@@ -71,7 +71,7 @@ func_print "Installing software for category 'Office'" 5
 packages=(
 evince
 evolution
-zathura
+foliate
 xpdf
 )
 

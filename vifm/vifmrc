@@ -3,8 +3,8 @@ colorscheme = gruvbox
 
 " Options
 " ==========================================================================
-" set millerview
-windo set quickview
+windo set millerview
+" windo set quickview
 set relativenumber
 set vicmd=nvim
 set trash
@@ -278,6 +278,11 @@ fileviewer *.epub
         \ %pc
         \ vifmimg clear
 filetype *.epub
+       \ {View with Foliate}
+       \ foliate %c %i &,
+
+" Djvu
+filetype *.djvu
        \ {View with Evince}
        \ evince %c %i &,
 
