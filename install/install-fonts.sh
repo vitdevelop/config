@@ -29,6 +29,12 @@ ttf-nerd-fonts-symbols
 
 func_iterate_install "${packages[@]}"
 
+packages=(
+ttf-material-design-icons-extended
+)
+
+func_iterate_install_aur "${packages[@]}"
+
 # mkdir -p $HOME/.local/share/fonts
 
 ###############################################################################
