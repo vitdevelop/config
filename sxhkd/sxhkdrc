@@ -224,7 +224,7 @@ XF86Audio{Raise,Lower}Volume
 # Dunstctl
 # --------------------------
 # Close last notification
-ctrl + space
+ctrl + alt + space
     dunstctl close
 
 # Close all notifications
