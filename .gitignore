@@ -6,6 +6,10 @@
 !bin/
 !bspwm/
 !cmus/
+cmus/autosave
+cmus/cache
+cmus/command-history
+cmus/playlists/default
 !dunst/
 !git/
 !gtk-3.0/

@@ -3,7 +3,7 @@ colorscheme = gruvbox
 
 " Options
 " ==========================================================================
-windo set millerview
+" windo set millerview
 " windo set quickview
 set relativenumber
 set vicmd=nvim
@@ -101,7 +101,12 @@ bmark! /etc e
 
 " Mappings
 " ==========================================================================
-" display sorting dialog
+" Copy between panels
+nnoremap <silent> <space>pm :move<cr>
+nnoremap <silent> <space>pc :copy<cr>
+nnoremap <silent> <space>pd :delete!<cr>
+
+" Display sorting dialog
 nnoremap <silent> S :sort<cr>
 
 " force file editing rather than opening it
