@@ -11,8 +11,8 @@ set vim-multiple-cursors
 " ===== Settings {{{
 set nowrap
 set hidden
-" set nonumber
-" set norelativenumber
+set number
+set relativenumber
 set incsearch
 set hlsearch
 set tabstop=4
@@ -39,21 +39,27 @@ set showmode
 " set sessionoptions+=tabpages,globals
 set ttimeoutlen=0
 " set foldmethod=marker
+
 " }}}
 
 " ===== Code editing  {{{
 
+" Move Statements
+nnoremap <C-S-k> :action MoveStatementUp<CR>
+nnoremap <C-S-j> :action MoveStatementDown<CR>
+nnoremap <A-S-k> :action MoveLineUp<CR>
+nnoremap <A-S-j> :action MoveLineDown<CR>
+
 " Commenting
-nnoremap <leader>c<leader> :action CommentByLineComment<CR>
-nnoremap <leader>cm :action CommentByBlockComment<CR>i
+nnoremap <leader>cc :action CommentByLineComment<CR>
+nnoremap <leader>cb :action CommentByBlockComment<CR>i
 nnoremap <leader>cy yy :action CommentByLineComment<CR>
 vnoremap <leader>c<leader> :action CommentByLineComment<CR>
 vnoremap <leader>cm :action CommentByBlockComment<CR>
 vnoremap <leader>cy ygv :action CommentByBlockComment<CR>
-noremap <leader>fu :action FindUsages<CR>
 
-nnoremap YY "+yy
 vnoremap Y "+y
+nnoremap YY "+yy
 nnoremap P "+p
 vnoremap P "+p
 " }}}
@@ -63,8 +69,9 @@ nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gb :action Back<cr>
 nnoremap gf :action Forward<cr>
+nnoremap gu :action ShowUsages<cr>
 
-" nnoremap <leader><leader> :action RecentFiles<cr>
+nnoremap <leader><leader> :action RecentFiles<cr>
 " nnoremap <leader>gc :action GotoClass<cr>
 " nnoremap <leader>gf :action GotoFile<cr>
 " nnoremap <leader>gs :action GotoSymbol<cr>
@@ -91,25 +98,25 @@ nmap == :action ReformatCode<CR>
 " }}}
 
 " ===== Git {{{
-" nnoremap ,gp :action Git.Push<cr>
-" nnoremap ,gP :action Git.Pull<cr>
-" nnoremap ,gb :action Git.Branches<cr>
-" nnoremap ,gm :action Git.Merge<cr>
-" nnoremap ,gg :action Git.Menu<cr>
-" nnoremap ,gt :action Git.Tag<cr>
-" nnoremap ,gi :action Git.Init<cr>
-" nnoremap ,ga :action Git.Add<cr>
-" nnoremap ,gf :action Git.Fetch<cr>
-" nnoremap ,gr :action Git.Rebase<cr>
-" nnoremap ,gR :action Git.Reset<cr>
-" nnoremap ,gs :action Git.Stash<cr>
-" nnoremap ,gu :action Git.Unstash<cr>
+"nnoremap ,gP :action Git.Push<cr>
+nnoremap ,gp :action Git.Pull<cr>
+nnoremap ,gb :action Git.Branches<cr>
+nnoremap ,gm :action Git.Merge<cr>
+nnoremap ,gg :action Git.Menu<cr>
+nnoremap ,gt :action Git.Tag<cr>
+nnoremap ,gi :action Git.Init<cr>
+nnoremap ,ga :action Git.Add<cr>
+nnoremap ,gf :action Git.Fetch<cr>
+nnoremap ,gr :action Git.Rebase<cr>
+nnoremap ,gR :action Git.Reset<cr>
+nnoremap ,gs :action Git.Stash<cr>
+nnoremap ,gu :action Git.Unstash<cr>
 " }}}
 
 " ===== Maven {{{
-" nnoremap ,mm :action Maven.ExecuteGoal<cr>
-" nnoremap ,mr :action Maven.ReimportProject<cr>
-" nnoremap ,mR :action Maven.Reimport<cr>
+nnoremap ,mm :action Maven.ExecuteGoal<cr>
+nnoremap ,mr :action Maven.ReimportProject<cr>
+nnoremap ,mR :action Maven.Reimport<cr>
 " }}}
 
 " ===== Easy Motion {{{
@@ -121,3 +128,50 @@ nnoremap \h :noh<CR>
 " }}}
 
 
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+nnoremap <leader>ws :split<CR>
+nnoremap <leader>wv :vsplit<CR>
+
+nnoremap <leader>wo :only<CR>
+nnoremap <leader>wd :close<CR>
+
+
+
+" StringManipulation Actions
+" -----------------------------------------
+" StringManipulation.AlignCenterAction
+" StringManipulation.AlignLeftAction
+" StringManipulation.AlignRightAction
+" StringManipulation.AlignToColumns
+" StringManipulation.CreateSequenceAction
+" StringManipulation.DiacriticsToAsciiAction
+" StringManipulation.EditorPopupMenu
+" StringManipulation.IncrementDuplicateNumbersAction
+" StringManipulation.KeepOnlyDuplicateLines
+" StringManipulation.RemoveDuplicateLines
+" StringManipulation.RemoveNewLinesAction
+" StringManipulation.ReverseAction
+" StringManipulation.ShuffleLinesAction
+" StringManipulation.Sort
+" StringManipulation.SortLinesBySubSelectionAction
+" StringManipulation.SwitchFilePathSeparators
+" StringManipulation.SwitchStyleAction
+" StringManipulation.ToDotStyleAction
+" StringManipulation.ToHyphenCaseAction
+" StringManipulation.ToHyphenCaseOrCamelCase
+" StringManipulation.ToPascalCaseOrCamelCase
+" StringManipulation.ToSnakeCaseOrCamelCase
+"
+
+"AcePlugin
+"AceAction                                          <A-;>
+" AceDeclarationAction
+" AceLineAction                                      <M-A-;>
+" AceTargetAction                                    <A-C-;>
+" AceWordAction                                      <C-S-;>
+" AceWordBackwardsAction
+" AceWordForwardAction

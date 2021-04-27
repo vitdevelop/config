@@ -51,7 +51,7 @@ else
 fi
 
 if [ "$is_reversed" == true ]; then
-    reversed_temp_data=$destination 
+    reversed_temp_data=$destination
     destination=$local_directory
     local_directory=$reversed_temp_data
 fi

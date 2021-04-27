@@ -407,8 +407,8 @@ ino <right> <Nop>
 "Clipboard{{{
 nnoremap YY "+yy
 vnoremap Y "+y
-" nnoremap P "+p
-" vnoremap P "+p
+nnoremap P "+p
+vnoremap P "+p
 " }}}
 
 "SpeciaL{{{
