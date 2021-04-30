@@ -47,6 +47,8 @@ Plug 'mhinz/vim-startify' " start screen
 " Plug 'tmux-plugins/vim-tmux-focus-events'
 " Plug 'melonmanchan/vim-tmux-resizer'
 " Plug 'christoomey/vim-tmux-navigator'
+Plug 'jackguo380/vim-lsp-cxx-highlight' " C/C++ syntax highlight
+Plug 'rhysd/vim-clang-format' " C/C++ format
 
 call plug#end()
 

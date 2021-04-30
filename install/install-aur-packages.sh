@@ -10,6 +10,7 @@ func_print "Installation of AUR software" 4
 ###############################################################################
 
 packages=(
+# nerd-fonts-complete
 arch-silence-grub-theme-git
 archlinux-wallpaper
 betterlockscreen
@@ -19,7 +20,7 @@ insomnia
 jvmtop
 kind
 kops
-# nerd-fonts-complete
+nerd-fonts-dejavu-complete
 polybar
 poppler
 pulseaudio-ctl

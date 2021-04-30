@@ -573,7 +573,7 @@ endfunction
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " use <m-space>for trigger completion
-inoremap <silent><expr> <m-space> coc#refresh()
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -717,3 +717,8 @@ nnoremap <leader>ts :Term<space>
 let g:csv_highlight_column = 'y'
 let b:csv_headerline = 0
 "
+
+" C/C++{{{
+nnoremap <Leader>cf :<C-u>ClangFormat<CR>
+"
+" }}}

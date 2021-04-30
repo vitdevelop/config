@@ -28,7 +28,6 @@ kubectl
 maven
 npm
 nodejs
-postgresql-client
 pygmentize
 python-pip
 ripgrep
