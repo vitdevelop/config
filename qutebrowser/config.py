@@ -376,7 +376,7 @@ config.bind("<Space>tc", "tab-clone")
 config.bind('<Ctrl-v>', 'leave-mode', mode='passthrough')
 
 # Passwords
-config.bind("<Space>fp", "spawn --userscript password_fill")
+config.bind("<Space>pf", "spawn --userscript password_fill")
 
 
 #  config.bind("<Meta-w>", "tab-close", mode="normal")
