@@ -65,9 +65,12 @@ application/vnd.ms-powerpoint.slideshow.macroenabled.12=presentations-free18.des
 application/vnd.ms-powerpoint.slideshow.macroEnabled.12=presentations-free18.desktop
 application/vnd.openxmlformats-officedocument.presentationml.slideshow=presentations-free18.desktop
 x-scheme-handler/icq=icqdesktop.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-VYM3Y0.desktop
 
 [Added Associations]
 application/pdf=org.gnome.Evince.desktop;xpdf.desktop;sxiv.desktop;
 x-scheme-handler/mailto=userapp-Evolution-R168P0.desktop;
 image/png=sxiv.desktop;feh.desktop;
 text/x-c++src=nvim.desktop;
+video/mp4=vlc.desktop;mpv.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-VYM3Y0.desktop;

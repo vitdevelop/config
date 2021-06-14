@@ -299,6 +299,8 @@ c.colors.tabs.selected.even.bg = base02
 # c.colors.webpage.bg = base00
 
 # ---------------------------------------------------------------
+# Default zoom
+c.zoom.default = '200%'
 
 c.fonts.default_family = 'Monospace'
 c.fonts.default_size = '16pt'
@@ -307,10 +309,11 @@ c.fonts.default_size = '16pt'
 
 #  c.url.default_page = 'https://www.google.com/search?hl=en'
 c.url.default_page = "about:blank"
-c.url.start_pages = 'https://www.google.com/search?hl=en'
+c.url.start_pages = 'https://duckduckgo.com/'
 
 c.url.searchengines = {
-        'DEFAULT': 'https://www.google.com/search?hl=en&q={}',
+        'DEFAULT': 'https://duckduckgo.com/?t=ffab&q={}',
+        'dd': 'https://duckduckgo.com/?t=ffab&q={}',
         'gg': 'https://www.google.com/search?hl=en&q={}',
         'yt': 'https://www.youtube.com/results?search_query={}',
         'st': 'https://stackoverflow.com/search?q={}',
@@ -372,6 +375,9 @@ config.bind("<Space>tc", "tab-clone")
 
 config.bind('<Ctrl-v>', 'leave-mode', mode='passthrough')
 
+# Passwords
+config.bind("<Space>fp", "spawn --userscript password_fill")
+
 
 #  config.bind("<Meta-w>", "tab-close", mode="normal")
 #  config.unbind("-")
@@ -388,3 +394,4 @@ config.bind('<Ctrl-v>', 'leave-mode', mode='passthrough')
 #  config.bind("T", "set-cmd-text :open -t {url:pretty}")
 #  config.bind("t", "set-cmd-text -s :open -t")
 # --------------------------------------
+config.load_autoconfig(False)

@@ -10,6 +10,7 @@ cmus/autosave
 cmus/cache
 cmus/command-history
 cmus/playlists/default
+qutebrowser/__pycache__
 !dunst/
 !git/
 !gtk-3.0/
