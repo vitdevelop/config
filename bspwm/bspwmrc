@@ -36,6 +36,7 @@ bspc rule -a TelegramDesktop desktop='^8' follow=on
 bspc rule -a Gimp desktop='^10' follow=on
 bspc rule -a rawtherapee desktop='^8' follow=on
 bspc rule -a firefox desktop='^3' follow=on
+bspc rule -a qutebrowser desktop='^3' follow=on
 bspc rule -a Chromium desktop='^6' follow=on
 bspc rule -a Slack desktop='^4' follow=on
 bspc rule -a Screenkey manage=off

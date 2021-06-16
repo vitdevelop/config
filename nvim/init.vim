@@ -86,24 +86,24 @@ let g:hybrid_reduced_contrast = 1
 let g:airline_theme='base16'
 " let g:airline_theme='papercolor'
 " let g:airline#extensions#taboo#enabled = 0
-let g:airline#extensions#vimagit#enabled = 1
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline#extensions#tabline#formatter = 'short_path'
+" let g:airline#extensions#vimagit#enabled = 1
+" let g:airline#extensions#virtualenv#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_idx_mode = 1
+" let g:airline#extensions#tabline#buffer_min_count = 2
+" let g:airline#extensions#tabline#formatter = 'short_path'
 
-" Buffer Tab Selectio" 
-nmap <leader>b1 <Plug>AirlineSelectTab1
-nmap <leader>b2 <Plug>AirlineSelectTab2
-nmap <leader>b3 <Plug>AirlineSelectTab3
-nmap <leader>b4 <Plug>AirlineSelectTab4
-nmap <leader>b5 <Plug>AirlineSelectTab5
-nmap <leader>b6 <Plug>AirlineSelectTab6
-nmap <leader>b7 <Plug>AirlineSelectTab7
-nmap <leader>b8 <Plug>AirlineSelectTab8
-nmap <leader>b9 <Plug>AirlineSelectTab9
-nmap <leader>b0 <Plug>AirlineSelectTab10
+" Buffer Tab Selectio"
+" nmap <leader>b1 <Plug>AirlineSelectTab1
+" nmap <leader>b2 <Plug>AirlineSelectTab2
+" nmap <leader>b3 <Plug>AirlineSelectTab3
+" nmap <leader>b4 <Plug>AirlineSelectTab4
+" nmap <leader>b5 <Plug>AirlineSelectTab5
+" nmap <leader>b6 <Plug>AirlineSelectTab6
+" nmap <leader>b7 <Plug>AirlineSelectTab7
+" nmap <leader>b8 <Plug>AirlineSelectTab8
+" nmap <leader>b9 <Plug>AirlineSelectTab9
+" nmap <leader>b0 <Plug>AirlineSelectTab10
 " }}}
 
 "Rainbow{{{
@@ -112,30 +112,17 @@ nnoremap <F9> :RainbowToggle<CR>
 " }}}
 
 "Mover{{{
-" move lines up and down with ALT+J/K
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+" move lines up and down with ALT+SHIFT+J/K
+nnoremap <A-S-j> :m .+1<CR>==
+nnoremap <A-S-k> :m .-2<CR>==
+inoremap <A-S-j> <Esc>:m .+1<CR>==gi
+inoremap <A-S-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-S-j> :m '>+1<CR>gv=gv
+vnoremap <A-S-k> :m '<-2<CR>gv=gv
 " }}}
 
 "Editor{{{
 nnoremap <silent> <localleader><space> :%s/\s\+$//e<CR> :echo "Trailing white space removed"<CR>
-" }}}
-
-"Easy Align{{{
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap <silent> <localleader>a <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap <silent> <localleader>a <Plug>(EasyAlign)
-" }}}
-
-"Scroll{{{
-"  vertical scroll
-nnoremap <M-[> 5zh
-nnoremap <M-]> 5zl
 " }}}
 
 "Easymotion{{{
@@ -155,9 +142,9 @@ nmap S <Plug>(easymotion-overwin-f)
 "UltiSnip{{{
 let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsListSnippets="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 " }}}
 
@@ -484,24 +471,24 @@ nnoremap <leader>9 :tabn 9<CR>
 " }}}
 
 "Git{{{
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 " nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gc :Gcommit -v -q<CR>
-nnoremap <leader>ga :Gcommit --amend<CR>
-nnoremap <leader>gt :Gcommit -v -q %<CR>
-nnoremap <leader>ge :Gedit<CR>
-nnoremap <leader>gr :Gread<CR>
-nnoremap <leader>gw :Gwrite<CR><CR>
-nnoremap <leader>gl :silent! Glog<CR>
-nnoremap <leader>gg :Ggrep<Space>
-nnoremap <leader>gm :Gmove<Space>
+nnoremap <leader>gc :Git commit -v -q<CR>
+nnoremap <leader>ga :G commit --amend<CR>
+" nnoremap <leader>gt :G commit -v -q %<CR>
+" nnoremap <leader>ge :Gedit<CR>
+" nnoremap <leader>gr :Gread<CR>
+" nnoremap <leader>gw :Gwrite<CR><CR>
+" nnoremap <leader>gl :silent! Glog<CR>
+" nnoremap <leader>gg :Ggrep<Space>
+" nnoremap <leader>gm :Gmove<Space>
 " nnoremap <leader>gb :Git branch<Space>
 " nnoremap <leader>go :Git checkout<Space>
 " nnoremap <leader>gps :Dispatch! git push<CR>
 " nnoremap <leader>gpl :Dispatch! git pull<CR>
-nnoremap <leader>gdh :diffget //2<CR>
-nnoremap <leader>gdl :diffget //3<CR>
+" nnoremap <leader>gdh :diffget //2<CR>
+" nnoremap <leader>gdl :diffget //3<CR>
 " Jump between hunks
 " nnoremap [g <Plug>(GitGutterNextHunk)
 " nnoremap ]g <Plug>(GitGutterPrevHunk)
@@ -555,7 +542,14 @@ au BufWinEnter *.* silent! loadview
 " }}}
 
 "COC{{{
-" Highlight symbol under cursor on CursorHold
+"
+" Configure extensions
+let g:coc_global_extensions= [
+            \ 'coc-rust-analyzer',
+            \ 'coc-go',
+            \ 'coc-clangd',
+            \ 'coc-toml',
+            \ ]
 au CursorHold * silent call CocActionAsync('highlight')
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.

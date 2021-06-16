@@ -8,7 +8,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'preservim/nerdcommenter' " comments
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " color icons
 Plug 'tpope/vim-fugitive' " git
 Plug 'vim-airline/vim-airline' " bottom bar
 Plug 'vim-airline/vim-airline-themes'
@@ -23,7 +23,6 @@ Plug 'xolox/vim-colorscheme-switcher'
 Plug 'morhetz/gruvbox' " color scheme
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " Fuzzy finder
-Plug 'junegunn/vim-easy-align' " align for types of files
 Plug 'vimwiki/vimwiki' " markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'jtratner/vim-flavored-markdown' " recognize github code blocks in markdown
