@@ -6,7 +6,10 @@ sxhkd &
 ## Enable clipboard manager
 clipmenud &
 
- Polybar
+# Enable redshift
+redshift &
+
+# Polybar
 $HOME/.config/polybar/launch.sh
 
 # Picom

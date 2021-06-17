@@ -11,6 +11,7 @@ cmus/cache
 cmus/command-history
 cmus/playlists/default
 qutebrowser/__pycache__
+!redshift/
 !dunst/
 !git/
 !gtk-3.0/
