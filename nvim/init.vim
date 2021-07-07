@@ -415,12 +415,13 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <leader>bn :bNext<CR>
-nnoremap <leader>bb :bNext<CR>
+" nnoremap <leader>bb :bNext<CR>
 nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bq :bd!<CR>
-nnoremap <leader>qa :bufdo bwipeout<CR>
+" nnoremap <leader>qa :bufdo bwipeout<CR>
 nnoremap <leader>bo :BufOnly<CR>
+" restore closed bufer
 nnoremap <leader><localleader> <C-^>
 nnoremap <silent><leader>b0 :call CleanEmptyBuffers()<CR> :echo "Empty buffers cleanned"<CR>
 " }}}
@@ -432,10 +433,24 @@ nnoremap <leader>wo :only<CR>
 nnoremap <leader>wd :close<CR>
 nnoremap <leader>ww <C-w>w
 nnoremap <leader>w= <C-w>=
-nnoremap <leader>wh <C-w>H
-nnoremap <leader>wl <C-w>L
-nnoremap <leader>wj <C-w>J
-nnoremap <leader>wk <C-w>K
+nnoremap <leader>wH <C-w>H
+nnoremap <leader>wL <C-w>L
+nnoremap <leader>wJ <C-w>J
+nnoremap <leader>wK <C-w>K
+" nnoremap <leader>wh <C-w>h
+" nnoremap <leader>wl <C-w>l
+" nnoremap <leader>wj <C-w>j
+" nnoremap <leader>wk <C-w>k
+nnoremap <silent><A-h> <C-w>h
+nnoremap <silent><A-l> <C-w>l
+nnoremap <silent><A-j> <C-w>j
+nnoremap <silent><A-k> <C-w>k
+nnoremap <silent><A-S-h> :vertical res +3<cr>
+nnoremap <silent><A-S-l> :vertical res -3<cr>
+nnoremap <silent><A-S-j> :res -3<cr>
+nnoremap <silent><A-S-k> :res +3<cr>
+
+
 " }}}
 
 "Tabs{{{
@@ -516,19 +531,19 @@ nnoremap \gl :GitGutterLineHighlightsToggle<CR>
 
 "Tmux{{{
 " tmux-navigation
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+" let g:tmux_navigator_no_mappings = 1
+" nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+" nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+" nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+" nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+" nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 
 " tmux-resizer
-let g:tmux_resizer_no_mappings = 1
-nnoremap <silent> <M-h> :TmuxResizeLeft<cr>
-nnoremap <silent> <M-j> :TmuxResizeDown<cr>
-nnoremap <silent> <M-k> :TmuxResizeUp<cr>
-nnoremap <silent> <M-l> :TmuxResizeRight<cr>
+" let g:tmux_resizer_no_mappings = 1
+" nnoremap <silent> <M-h> :TmuxResizeLeft<cr>
+" nnoremap <silent> <M-j> :TmuxResizeDown<cr>
+" nnoremap <silent> <M-k> :TmuxResizeUp<cr>
+" nnoremap <silent> <M-l> :TmuxResizeRight<cr>
 " }}}
 
 "Autocommands{{{
@@ -546,7 +561,6 @@ au BufWinEnter *.* silent! loadview
 " Configure extensions
 let g:coc_global_extensions= [
             \ 'coc-rust-analyzer',
-            \ 'coc-go',
             \ 'coc-clangd',
             \ 'coc-toml',
             \ ]
@@ -608,14 +622,6 @@ command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')
-" }}}
-
-"Terraform ====== {{{
-"
-let g:terraform_align=1
-let g:terraform_fmt_on_save=1
-"
-"
 " }}}
 
 "Terminal Settings{{{
@@ -693,6 +699,17 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_highlight_debug = 0
+
+" Debugger
+" let g:go_debug_preserve_layout = 0
+" \ 'goroutines': 'botright 10new',
+let g:go_debug_windows = {
+            \ 'vars':       'topleft 40vnew',
+            \ 'stack':      'rightbelow 10new',
+            \ 'goroutines': 'rightbelow 5new',
+            \ 'out':        'botright 5new',
+  \ }
 " }}}
 
 "Text{{{

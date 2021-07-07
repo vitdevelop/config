@@ -18,8 +18,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter' " show git diff
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " go lang commands in vim
 Plug 'SirVer/ultisnips' " Snipets, need create snippets
-Plug 'xolox/vim-misc' " for colorscheme switcher
-Plug 'xolox/vim-colorscheme-switcher'
+" Plug 'xolox/vim-misc' " for colorscheme switcher
+" Plug 'xolox/vim-colorscheme-switcher'
 Plug 'morhetz/gruvbox' " color scheme
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " Fuzzy finder
@@ -28,8 +28,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'jtratner/vim-flavored-markdown' " recognize github code blocks in markdown
 Plug 'haya14busa/is.vim' " hide highlight after select
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Shougo/neco-vim' " autocomplete in vim
-Plug 'neoclide/coc-neco' " autocomplete in coc
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete in vim
 Plug 'hashivim/vim-terraform' " Terraform lsp
 Plug 'schickling/vim-bufonly' " clear buffers, command :BufOnly
 Plug 'ryanoasis/vim-devicons' " icons
