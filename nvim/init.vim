@@ -28,7 +28,7 @@ set hidden
 set number
 set relativenumber
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=2
 set autowrite
 set cursorline
 set autoread
@@ -459,8 +459,8 @@ nnoremap <leader>td :windo bd<CR>
 nnoremap <leader>tq :windo bd!<CR>
 nnoremap <silent><leader>tw :sbp<bar>wincmd p<bar>wincmd T<CR> :echo "Moved buffer to a new tab"<CR>
 nnoremap <leader>to :tabonly<CR>
-nnoremap <leader>tt :tabnext<CR>
-nnoremap <leader>tn :tabnext<CR>
+" nnoremap <leader>tt :tabnext<CR>
+" nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader><tab> :tabnext<CR>
 nnoremap <leader>tp :tabprev<CR>
 nnoremap <leader>tmf :tabm 0<CR>
@@ -594,7 +594,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Remap for rename current word
-nmap <localleader>lrn :w<CR> <Plug>(coc-rename)
+nmap <localleader>cn :w<CR> <Plug>(coc-rename)
 
 " Remap for format selected region
 xnoremap <localleader>lf  <Plug>(coc-format-selected)
@@ -613,6 +613,8 @@ nnoremap <localleader>lqf  <Plug>(coc-fix-current)
 " Show the diagnostic list
 nnoremap <localleader>4 :<C-u>CocList diagnostics<CR>
 
+" Save file on format
+nnoremap == :Format<CR>:w<CR>
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -719,9 +721,9 @@ command! CamelCaseToUnderscore :s/\(\l\)\(\u\)/\1\_\l\2/gc
 " }}}
 
 "Terminal{{{
-nnoremap <leader>tt :TTerm<space>
-nnoremap <leader>tv :VTerm<space>
-nnoremap <leader>ts :Term<space>
+" nnoremap <leader>tt :TTerm<space>
+" nnoremap <leader>tv :VTerm<space>
+" nnoremap <leader>ts :Term<space>
 " }}}
 
 "Csv{{{

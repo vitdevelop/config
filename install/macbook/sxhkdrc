@@ -219,10 +219,10 @@ super + alt + ctrl + 8
 # Display Light
 # --------------------------
 XF86MonBrightnessDown
-    light -U 1
+    light -U 10
 
 XF86MonBrightnessUp
-    light -A 1
+    light -A 10
 
 
 # Keyboard Light
