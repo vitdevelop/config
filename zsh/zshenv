@@ -52,3 +52,4 @@ export FONTPREVIEW_FG_COLOR="#000000"
 # Preview text that should be displayed in the font preview window
 export FONTPREVIEW_PREVIEW_TEXT="ABCDEFGHIJKLM\nNOPQRSTUVWXYZ\nabcdefghijklm\nnopqrstuvwxyz\n1234567890\n!@$\%(){}[]"
 
+. "$HOME/.cargo/env"

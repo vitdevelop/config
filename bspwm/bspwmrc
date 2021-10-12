@@ -19,7 +19,7 @@ source ~/.xprofile
 
 # Background
 # nitrogen --set-centered /usr/share/backgrounds/archlinux/archlinux-simplyblack.png &
-nitrogen --set-centered /usr/share/backgrounds/archlinux/archlinux-simplyblack.png &
+nitrogen --set-scaled /usr/share/backgrounds/archlinux/landscape.jpg &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 

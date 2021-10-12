@@ -73,12 +73,13 @@ evince
 evolution
 foliate
 xpdf
+freeoffice
 )
 
 func_iterate_install "${packages[@]}"
 
 # FreeOffice
-source ./office/install_freeoffice.sh
+# source ./office/install_freeoffice.sh
 
 ###############################################################################
 
@@ -156,6 +157,7 @@ reflector
 pass
 figlet
 libqalculate
+scrcpy
 )
 
 func_iterate_install "${packages[@]}"

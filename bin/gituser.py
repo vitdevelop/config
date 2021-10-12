@@ -7,7 +7,7 @@ import re
 
 profiles = {
         "github": ["balanici_vitalik@mail.ru", "vitdevelop"],
-        "hato": ["vitalie@hato.global", "Vitalie"]
+        "hato": ["vitalie@hato.global", "Vitalie"],
         }
 
 @click.group()
@@ -21,7 +21,7 @@ def set(ctx, profile):
     if profile in profiles:
         user_data = profiles[profile]
         subprocess.run([f'git config --global user.email {user_data[0]}'], shell=True)
-        subprocess.run([f'git config --global user.name {user_data[1]}'], shell=True)
+        subprocess.run([f'git config --global --replace-all user.name {user_data[1]}'], shell=True)
 
         # check profile
         ctx.invoke(status)

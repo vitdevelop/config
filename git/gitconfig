@@ -2,8 +2,8 @@
 	editor = nvim
 
 [user]
-	name = vitdevelop
 	email = balanici_vitalik@mail.ru
+	name = vitdevelop
 
 [color]
     status = auto
