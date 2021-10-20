@@ -42,9 +42,9 @@ Plug 'vimlab/split-term.vim' " Open terminal
 Plug 'luochen1990/rainbow' " different level paranthese colors
 Plug 'chrisbra/csv.vim' " work with csv
 Plug 'mhinz/vim-startify' " start screen
-" Plug 'tmux-plugins/vim-tmux-focus-events'
-" Plug 'melonmanchan/vim-tmux-resizer'
-" Plug 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'RyanMillerC/better-vim-tmux-resizer'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'jackguo380/vim-lsp-cxx-highlight' " C/C++ syntax highlight
 Plug 'rhysd/vim-clang-format' " C/C++ format
 

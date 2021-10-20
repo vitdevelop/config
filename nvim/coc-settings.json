@@ -1,28 +1,51 @@
 {
     "suggest.minTriggerInputLength": 1,
-    "coc.preferences.formatOnSaveFiletypes": ["c", "h"],
+    "coc.preferences.formatOnSaveFiletypes": [
+        "c",
+        "h"
+    ],
     "languageserver": {
         "ccls": {
             "command": "ccls",
-            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-            "rootPatterns": [".ccls-root", "compile_commands.json"],
+            "filetypes": [
+                "c",
+                "cpp",
+                "cuda",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls-root",
+                "compile_commands.json"
+            ],
             "initializationOptions": {
                 "cache": {
-                  "directory": "/tmp/ccls"
+                    "directory": "/tmp/ccls"
                 },
                 "client": {
-                  "snippetSupport": true
+                    "snippetSupport": true
                 },
-                "highlight": { "lsRanges" : true }
+                "highlight": {
+                    "lsRanges": true
+                }
             }
         },
         "golang": {
             "command": "gopls",
-            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["go"],
+            "rootPatterns": [
+                "go.mod",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "filetypes": [
+                "go"
+            ],
             "initializationOptions": {
                 "usePlaceholders": true
             }
         }
-    }
- }
+    },
+    "rust-analyzer.cargo.runBuildScripts": true,
+    "rust-analyzer.procMacro.enable": true
+}

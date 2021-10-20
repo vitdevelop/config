@@ -427,11 +427,11 @@ nnoremap <silent><leader>b0 :call CleanEmptyBuffers()<CR> :echo "Empty buffers c
 " }}}
 
 "Windows{{{
-nnoremap <leader>ws :split<CR>
-nnoremap <leader>wv :vsplit<CR>
+nnoremap <leader>w- :split<CR>
+nnoremap <leader>w\ :vsplit<CR>
 nnoremap <leader>wo :only<CR>
-nnoremap <leader>wd :close<CR>
-nnoremap <leader>ww <C-w>w
+nnoremap <leader>wq :close<CR>
+" nnoremap <leader>ww <C-w>w
 nnoremap <leader>w= <C-w>=
 nnoremap <leader>wH <C-w>H
 nnoremap <leader>wL <C-w>L
@@ -531,19 +531,19 @@ nnoremap \gl :GitGutterLineHighlightsToggle<CR>
 
 "Tmux{{{
 " tmux-navigation
-" let g:tmux_navigator_no_mappings = 1
-" nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-" nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-" nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-" nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-" nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 
 " tmux-resizer
-" let g:tmux_resizer_no_mappings = 1
-" nnoremap <silent> <M-h> :TmuxResizeLeft<cr>
-" nnoremap <silent> <M-j> :TmuxResizeDown<cr>
-" nnoremap <silent> <M-k> :TmuxResizeUp<cr>
-" nnoremap <silent> <M-l> :TmuxResizeRight<cr>
+let g:tmux_resizer_no_mappings = 1
+nnoremap <silent> <C-A-h> :TmuxResizeLeft<cr>
+nnoremap <silent> <C-A-j> :TmuxResizeDown<cr>
+nnoremap <silent> <C-A-k> :TmuxResizeUp<cr>
+nnoremap <silent> <C-A-l> :TmuxResizeRight<cr>
 " }}}
 
 "Autocommands{{{
