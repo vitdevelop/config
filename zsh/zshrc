@@ -76,7 +76,7 @@ alias cfg-ideavim="nvim ~/.config/idea/ideavimrc"
 alias cfg-tmux="nvim ~/.config/tmux/tmux.conf"
 alias cfg-sxhkd="nvim ~/.config/sxhkd/sxhkdrc"
 alias cfg-bspwm="nvim ~/.config/bspwm/bspwmrc"
-alias cfg-polybar="nvim ~/.config/polybar/config"
+alias cfg-polybar="nvim ~/.config/polybar/config.ini ~/.config/polybar/modules.ini"
 alias cfg-install="nvim ~/.config/install/install.sh"
 alias cfg-qutebrowser="nvim ~/.config/qutebrowser/config.py"
 alias cfg-vifm="nvim ~/.config/vifm/vifmrc"
@@ -179,8 +179,8 @@ alias cdtrash="cd ~/.trash"
 
 # Autocompletes
 # -----------------------------
-source ~/.oh-my-zsh/custom/plugins/minikube_complete/minikube_autocompletion.sh
-source ~/.oh-my-zsh/custom/plugins/helm_complete/helm_autocompletion.sh
+# source ~/.oh-my-zsh/custom/plugins/minikube_complete/minikube_autocompletion.sh
+# source ~/.oh-my-zsh/custom/plugins/helm_complete/helm_autocompletion.sh
 
 
 # ------------------------------

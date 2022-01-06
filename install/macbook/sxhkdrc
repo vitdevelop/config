@@ -219,19 +219,19 @@ super + alt + ctrl + 8
 # Display Light
 # --------------------------
 XF86MonBrightnessDown
-    light -U 10
+    light -U 5
 
 XF86MonBrightnessUp
-    light -A 10
+    light -A 5
 
 
 # Keyboard Light
 # --------------------------
 XF86KbdBrightnessDown
-    kbdlight down 10
+    kbdlight down 5
 
 XF86KbdBrightnessUp
-    kbdlight up 10
+    kbdlight up 5
 
 
 # Puseaudio

@@ -1,4 +1,15 @@
 /*
+/* ignore */
+cmus/autosave
+cmus/cache
+cmus/command-history
+cmus/playlists/default
+qutebrowser/__pycache__
+qutebrowser/autoconfig.yml
+mimeapps.list
+k9s/config.yml
+nvim/.netrwhist
+/* allow */
 !.gitignore
 !alacritty/
 !Arch\ Linux\ Install.md
@@ -6,11 +17,6 @@
 !bin/
 !bspwm/
 !cmus/
-cmus/autosave
-cmus/cache
-cmus/command-history
-cmus/playlists/default
-qutebrowser/__pycache__
 !redshift/
 !dunst/
 !git/
@@ -22,7 +28,6 @@ qutebrowser/__pycache__
 !k9s/
 !mimeapps.list
 !nvim/
-nvim/.netrwhist
 !picom/
 !polybar/
 !pulseaudio-ctl/

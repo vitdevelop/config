@@ -9,22 +9,23 @@ source ./utils.sh
 func_print "Installation of fonts software" 4
 
 packages=(
-awesome-terminal-fonts
 adobe-source-sans-pro-fonts
+awesome-terminal-fonts
 cantarell-fonts
+gucharmap
 noto-fonts
+tamsyn-font
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
+ttf-font-awesome
 ttf-hack
 ttf-inconsolata
+ttf-jetbrains-mono
 ttf-liberation
+ttf-nerd-fonts-symbols
 ttf-roboto
 ttf-ubuntu-font-family
-tamsyn-font
-ttf-jetbrains-mono
-ttf-font-awesome
-ttf-nerd-fonts-symbols
 )
 
 func_iterate_install "${packages[@]}"
@@ -35,7 +36,7 @@ ttf-material-design-icons-extended
 
 func_iterate_install_aur "${packages[@]}"
 
-# mkdir -p $HOME/.local/share/fonts
+bash update_polybar_theme.sh
 
 ###############################################################################
 
