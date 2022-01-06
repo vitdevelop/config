@@ -9,6 +9,7 @@ qutebrowser/autoconfig.yml
 mimeapps.list
 k9s/config.yml
 nvim/.netrwhist
+service/motherboard_led/it8297/__pycache__/
 /* allow */
 !.gitignore
 !alacritty/

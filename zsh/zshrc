@@ -31,8 +31,7 @@ plugins=(
   zsh-syntax-highlighting
   kubectl
   history
-  rustup
-  cargo
+  rust
 )
 
 source $ZSH/oh-my-zsh.sh
