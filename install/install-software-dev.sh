@@ -10,14 +10,11 @@ func_print "Installation of development software" 4
 
 packages=(
 ack
-ansible
-aws-cli
 base-devel
 docker
 git
 go
 go-tools
-gradle
 helm
 highlight
 httpie
@@ -32,11 +29,9 @@ pygmentize
 python-pip
 ripgrep
 s3cmd
-terraform
 vagrant
 virtualbox
 virtualbox-host-modules-arch
-visualvm
 )
 
 func_iterate_install "${packages[@]}"

@@ -1,4 +1,16 @@
 # Arch linux installation instruction
+## Prepare USB
+
+#### 1. Download
+Download image [here](https://archlinux.org/download/)
+
+#### 2. Install on usb
+Run the following command, replacing `/dev/sdX` with your drive, e.g. /dev/sda. (Do **not** append a partition number, so do **not** use something like `/dev/sda1`)
+
+`dd bs=4M if=path/to/archlinux-version-x86_64.iso of=/dev/sdX conv=fsync oflag=direct status=progress`
+
+> More information [here](https://wiki.archlinux.org/title/USB_flash_installation_medium)
+---
 
 > If on boot from usb stuck on message `triggering uevents`  
 > in grub menu press `e` and append `intel_iommu=on` and `iommu=pt` or `nomodeset` to end of line.  

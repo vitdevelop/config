@@ -32,7 +32,6 @@ func_print "Installing software for category 'Internet'" 5
 
 packages=(
 firefox
-qutebrowser
 telegram-desktop
 qbittorrent
 )

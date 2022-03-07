@@ -17,16 +17,13 @@ betterlockscreen
 docker-credential-pass
 golangci-lint-bin
 insomnia
-jvmtop
 kind
-kops
 nerd-fonts-dejavu-complete
 polybar
 poppler
 pulseaudio-ctl
 pv
 skypeforlinux-stable-bin
-slack-desktop
 sxiv-rifle
 )
 
