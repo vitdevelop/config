@@ -15,6 +15,7 @@ xorg-xmodmap
 xorg-xrandr
 xorg-xdpyinfo
 xorg-xrdb
+xorg-xsetroot
 bspwm
 sxhkd
 dmenu

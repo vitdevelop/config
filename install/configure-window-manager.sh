@@ -18,7 +18,7 @@ sudo cp $INSTALL_DIR/media/wallpapers/archlinux-simplyblack.png /usr/share/backg
 
 # LightDM Theme
 sudo cp -r $INSTALL_DIR/media/lightdm-webkit-themes/arch /usr/share/lightdm-webkit/themes/
-sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
+sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=web-greeter/' /etc/lightdm/lightdm.conf
 sudo sed -i 's|webkit_theme.*|webkit_theme\t    = arch|' /etc/lightdm/lightdm-webkit2-greeter.conf
 
 sudo systemctl enable mpd

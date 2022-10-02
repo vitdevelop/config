@@ -25,6 +25,7 @@ pulseaudio-ctl
 pv
 skypeforlinux-stable-bin
 sxiv-rifle
+web-greeter
 )
 
 func_iterate_install_aur "${packages[@]}"
