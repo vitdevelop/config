@@ -26,6 +26,7 @@ pv
 skypeforlinux-stable-bin
 sxiv-rifle
 web-greeter
+downgrade
 )
 
 func_iterate_install_aur "${packages[@]}"
