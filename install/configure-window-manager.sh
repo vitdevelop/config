@@ -22,6 +22,8 @@ sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=web-greeter/' 
 sudo sed -i 's/icon_theme:/icon_theme: None/' /etc/lightdm/web-greeter.yml
 sudo sed -i 's/time_language:/time_language: ru/' /etc/lightdm/web-greeter.yml
 
+xsetroot -cursor_name left_ptr
+
 sudo systemctl enable mpd
 
 ###############################################################################
