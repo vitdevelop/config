@@ -151,7 +151,7 @@ man
 tldr
 nmap
 net-tools
-youtube-dl
+yt-dlp
 reflector
 pass
 figlet
