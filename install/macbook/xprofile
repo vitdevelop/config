@@ -24,7 +24,6 @@ imwheel
 export PATH="$PATH:$HOME/.local/bin"
 # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 export _JAVA_AWT_WM_NONREPARENTING=1
-export SUDO_ASKPASS=$HOME/.config/bin/dmenu-ask-pass.sh
 
 xdg-settings set default-web-browser firefox
 

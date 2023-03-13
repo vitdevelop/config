@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choices="vim\nideavim\nzsh\nbspwm\nsxhkd\nvifm\npolybar\ntmux\nqutebrowser\nalacritty"
+choices="vim\nideavim\nzsh\nbspwm\nsxhkd\nvifm\npolybar\ntmux\nalacritty\nrofi"
 
 chosen=$(echo -e "$choices" | dmenu -fn 'JetBrains Mono:Regular:size=14' -p 'Edit Config' -i)
 
@@ -13,7 +13,6 @@ case "$chosen" in
     vifm) alacritty -e nvim -- $HOME/.config/vifm/vifmrc ;;
     polybar) alacritty -e nvim -- $HOME/.config/polibar/config ;;
     tmux) alacritty -e nvim -- $HOME/.config/tmux/tmux.conf ;;
-    qutebrowser) alacritty -e nvim -- $HOME/.config/qutebrowser/config.py ;;
     alacritty) alacritty -e nvim -- $HOME/.config/alacritty/alacritty.yml ;;
     rofi) alacritty -e nvim -- $HOME/.config/rofi/config.rasi ;;
 esac

@@ -35,13 +35,10 @@ bspc config presel_feedback_color \#404040
 
 bspc rule -a Evolution desktop='^7' follow=on
 bspc rule -a Skype desktop='^8' follow=on
-bspc rule -a TelegramDesktop desktop='^8' follow=on
+bspc rule -a TelegramDesktop desktop='^9' follow=on
 bspc rule -a Gimp desktop='^10' follow=on
-bspc rule -a rawtherapee desktop='^8' follow=on
 bspc rule -a firefox desktop='^3' follow=on
-bspc rule -a qutebrowser desktop='^3' follow=on
 bspc rule -a Chromium desktop='^6' follow=on
-bspc rule -a Slack desktop='^4' follow=on
 bspc rule -a Screenkey manage=off
 # bspc rule -a jetbrains-idea desktop='^4' follow=on
 # bspc rule -a Gimp desktop='^8' state=floating follow=on

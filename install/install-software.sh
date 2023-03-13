@@ -50,10 +50,8 @@ simplescreenrecorder
 flameshot
 imagemagick
 meld
-scrot
 maim
 mpd
-rawtherapee
 exiv2
 mp3info
 sox
@@ -72,7 +70,6 @@ evince
 evolution
 foliate
 xpdf
-freeoffice
 )
 
 func_iterate_install "${packages[@]}"
