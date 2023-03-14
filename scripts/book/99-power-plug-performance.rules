@@ -1,7 +1,0 @@
-ACTION="change"
-
-# Enable performance profile on power plug
-SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/bin/bash /home/vitdevelop/.config/scripts/book/performance.sh performance"
-
-# Disable performance profile on power unplug
-SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/bin/bash /home/vitdevelop/.config/scripts/book/performance.sh powersave"

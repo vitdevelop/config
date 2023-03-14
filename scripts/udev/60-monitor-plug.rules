@@ -1,0 +1,2 @@
+# Update xrandr configuration
+ACTION=="change", SUBSYSTEM=="drm", RUN+="/bin/bash /home/vitdevelop/.config/scripts/udev/calibrate_monitors.sh"

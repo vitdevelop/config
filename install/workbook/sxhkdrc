@@ -191,6 +191,9 @@ super + alt + ctrl + 0
 super + alt + ctrl + 1
     $HOME'/.local/bin/dmenu-cfg.sh'
 
+super + alt + ctrl + 9
+    $HOME'/.local/bin/dmenu-screen.sh'
+
 # Display Light
 # --------------------------
 super + F6
