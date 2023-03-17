@@ -197,3 +197,23 @@ Execute `visudo` and uncomment line `# %wheel ALL=(ALL) ALL`
 #### 10. After booting into the UI, run the `post-install.sh` script
 `cd .config/install`  
 `sh post-install.sh`
+
+---
+
+## Detect other OS-es
+If you have other OS-es installed already and want to include them in grub, follow intructions:
+
+#### 1. Install `os-prober`
+        `pacman -S os-prober`
+        
+#### 2. You need to add `GRUB_DISABLE_OS_PROBER=false` to your `/etc/default/grub`
+
+#### 3. Generate grub `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+
+#### 4. (Optional) If your device entered in bootloop
+        - Boot from live usb
+        - mount linux(`/`) partition under `/mnt`
+        - change root with `arch-chroot /mnt`
+        - mount efi partition under `/boot/efi`
+        - execute `grub-install`
+        This will update your grub.
