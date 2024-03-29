@@ -1,19 +1,20 @@
+# -----------------------------------------------------------------------------
+# Dracula skin
+# -----------------------------------------------------------------------------
+
 # Styles...
 foreground: &foreground "#f8f8f2"
-background: &background "#aa282828"
+background: &background "#282a36"
 current_line: &current_line "#44475a"
 selection: &selection "#44475a"
 comment: &comment "#6272a4"
 cyan: &cyan "#8be9fd"
-green: &green "#98971a"
+green: &green "#50fa7b"
 orange: &orange "#ffb86c"
 pink: &pink "#ff79c6"
 purple: &purple "#bd93f9"
-red: &red "#cc241d"
-yellow: &yellow "#d79921"
-dark_yellow: &dark_yellow "#999900"
-blue: &blue "#556a7d"
-light_blue: &light_blue "#7AA6DA"
+red: &red "#ff5555"
+yellow: &yellow "#f1fa8c"
 
 # Skin...
 k9s:
@@ -21,10 +22,15 @@ k9s:
   body:
     fgColor: *foreground
     bgColor: *background
-    logoColor: *green
+    logoColor: *purple
+  # Command prompt styles
+  prompt:
+    fgColor: *foreground
+    bgColor: *background
+    suggestColor: *purple
   # ClusterInfoView styles.
   info:
-    fgColor: *green
+    fgColor: *pink
     sectionColor: *foreground
   # Dialog styles.
   dialog:
@@ -43,30 +49,30 @@ k9s:
       focusColor: *current_line
     menu:
       fgColor: *foreground
-      keyColor: *blue
+      keyColor: *pink
       # Used for favorite namespaces
-      numKeyColor: *blue
+      numKeyColor: *pink
     # CrumbView attributes for history navigation.
     crumbs:
       fgColor: *foreground
-      bgColor: *green
+      bgColor: *current_line
       activeColor: *current_line
     # Resource status and update styles
     status:
-      newColor: *blue
-      modifyColor: *yellow
-      addColor: *light_blue
+      newColor: *cyan
+      modifyColor: *purple
+      addColor: *green
       errorColor: *red
-      highlightcolor: *orange
+      highlightColor: *orange
       killColor: *comment
       completedColor: *comment
     # Border title styles.
     title:
       fgColor: *foreground
       bgColor: *current_line
-      highlightColor: *dark_yellow
-      counterColor: *dark_yellow
-      filterColor: *foreground
+      highlightColor: *orange
+      counterColor: *purple
+      filterColor: *pink
   views:
     # Charts skins...
     charts:
@@ -81,8 +87,6 @@ k9s:
     table:
       fgColor: *foreground
       bgColor: *background
-      cursorFgColor: *foreground
-      cursorBgColor: *current_line
       # Header row styles.
       header:
         fgColor: *foreground
@@ -105,5 +109,7 @@ k9s:
       fgColor: *foreground
       bgColor: *background
       indicator:
-        fgColor: *background
-        bgColor: *blue
+        fgColor: *foreground
+        bgColor: *purple
+        toggleOnColor: *green
+        toggleOffColor: *cyan

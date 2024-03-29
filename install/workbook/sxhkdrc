@@ -226,3 +226,9 @@ ctrl + shift + space
 # Pop one notification from history
 ctrl + grave
     dunstctl history-pop
+
+# Experimental
+# --------------------------
+# Open calculator
+XF86Calculator
+    bspc rule -a \* -o state=floating && galculator

@@ -45,18 +45,18 @@ source $ZSH/oh-my-zsh.sh
 # ------------------------------
 # Java
 # ------------------------------
-alias mvn-new="mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4"
+# alias mvn-new="mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4"
 
 # Kubernetes
 # ------------------------------
-alias kube-current="kubectl config current-context"
-alias kube-info="kubectl cluster-info"
+# alias kube-current="kubectl config current-context"
+# alias kube-info="kubectl cluster-info"
 alias k="kubectl"
 
-alias fm="sh ~/.local/bin/vifmrun ."
-alias f="fzf"
+# alias fm="sh ~/.local/bin/vifmrun ."
+# alias f="fzf"
 alias vim="nvim"
-alias idea="idea.sh"
+# alias idea="idea.sh"
 alias vifm='sh ~/.local/bin/vifmrun'
 
 function open {
@@ -64,8 +64,8 @@ function open {
 }
 
 # Java
-alias j11='sudo archlinux-java set java-11-openjdk'
-alias j14='sudo archlinux-java set java-14-openjdk'
+# alias j11='sudo archlinux-java set java-11-openjdk'
+# alias j14='sudo archlinux-java set java-14-openjdk'
 
 # Configuration Files
 # ------------------------------
@@ -426,7 +426,3 @@ fgshow() {
                 {}
 FZF-EOF"
 }
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -3,6 +3,8 @@ export LANG=en_US.UTF-8
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/go/bin"
 export PATH="$PATH:$HOME/.local/idea/bin"
+export PATH="$PATH:/usr/share/bpftrace/tools"
+export PATH="$PATH:/usr/share/bcc/tools"
 
 export GOPATH="$HOME/.local/go"
 export GO111MODULE="on"
