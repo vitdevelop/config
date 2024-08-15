@@ -40,9 +40,9 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 
 # Install istio
-curl -L https://istio.io/downloadIstio | sh -
-mv istio* $HOME/.local/istio
-cp $HOME/.local/istio/bin/istioctl $HOME/.local/bin
+# curl -L https://istio.io/downloadIstio | sh -
+# mv istio* $HOME/.local/istio
+# cp $HOME/.local/istio/bin/istioctl $HOME/.local/bin
 
 
 ###############################################################################

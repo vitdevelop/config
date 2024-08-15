@@ -32,7 +32,6 @@ plugins=(
   kubectl
   history
   rust
-  telepresence
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -56,7 +55,7 @@ alias k="kubectl"
 # alias fm="sh ~/.local/bin/vifmrun ."
 # alias f="fzf"
 alias vim="nvim"
-# alias idea="idea.sh"
+alias idea="idea"
 alias vifm='sh ~/.local/bin/vifmrun'
 
 function open {
