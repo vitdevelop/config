@@ -191,6 +191,9 @@ super + alt + ctrl + 0
 super + alt + ctrl + 1
     $HOME'/.local/bin/dmenu-cfg.sh'
 
+super + alt + ctrl + 8
+    $HOME'/.local/bin/dmenu-theme.sh'
+
 super + alt + ctrl + 9
     $HOME'/.local/bin/dmenu-screen.sh'
 
@@ -226,6 +229,12 @@ ctrl + shift + space
 # Pop one notification from history
 ctrl + grave
     dunstctl history-pop
+
+# Theme
+# --------------------------
+# Switch dark theme
+ctrl + alt + super + 8
+    gsettings set org.gnome.desktop.interface color-scheme prefer-light
 
 # Experimental
 # --------------------------

@@ -48,6 +48,7 @@ func_print "Creating application links" 3
 ln $HOME/.config/bin/dmenu-cfg.sh $HOME/.local/bin/dmenu-cfg.sh
 ln $HOME/.config/bin/dmenu-poweroff.sh $HOME/.local/bin/dmenu-poweroff.sh
 ln $HOME/.config/bin/dmenu-screen.sh $HOME/.local/bin/dmenu-screen.sh
+ln $HOME/.config/bin/dmenu-theme.sh $HOME/.local/bin/dmenu-theme.sh
 
 sudo chsh -s /bin/zsh $USER
 
