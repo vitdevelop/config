@@ -1,0 +1,2 @@
+# Execute pairing program when appropriate
+ACTION=="add|remove", SUBSYSTEM=="net", ENV{ID_USB_DRIVER}=="rndis_host", SYMLINK+="android"
