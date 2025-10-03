@@ -25,10 +25,9 @@ rofi-pass
 xdo
 xdotool
 feh
-sxiv
 imagemagick
 lightdm
-lightdm-webkit2-greeter
+web-greeter
 imwheel
 papirus-icon-theme
 materia-gtk-theme
@@ -38,7 +37,6 @@ arandr
 clipmenu
 lxappearance
 lxrandr
-nitrogen
 picom
 playerctl
 python-pywal
