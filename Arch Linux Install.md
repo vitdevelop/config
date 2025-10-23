@@ -161,13 +161,16 @@ systemctl enable systemd-networkd.service
 `wpa_passphrase <SSID> <password> > /etc/wpa_supplicant/example.conf`  
 Edit `/etc/wpa_supplicant/example.conf`
 ```
-ctrl_interface=/run/wpa_supplicant
+[ctrl_interface](ctrl_interface)=/run/wpa_supplicant
 ctrl_interface_group=wheel
 update_config=1
 ```
 `wpa_supplicant -B -i <interface_name> -c /etc/wpa_supplicant/example.conf`
 `wpa_cli`
 `enable_network 0`
+
+###### Broadcom BCM43602
+Add `brcmfmac.feature_disable=0x82000` to kernel parameters `/boot/grub/grub.cfg`.
 
 #### 2. Create user
 `useradd -m -U -G wheel -u 1000 username`
