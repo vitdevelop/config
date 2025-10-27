@@ -22,7 +22,7 @@ func_iterate_install "${packages[@]}"
 packages=(
 kbdlight
 light-git
-bcwc-pcie-git
+facetimehd-dkms
 macbook-lighter
 )
 func_iterate_install_aur "${packages[@]}"

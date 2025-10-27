@@ -4,3 +4,4 @@
  - acpi_osi=Darwin
  - acpi_mask_gpe=0x06
  - processor.ignore_ppc=1
+ - brcmfmac.feature_disable=0x82000

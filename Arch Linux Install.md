@@ -201,6 +201,14 @@ Execute `visudo` and uncomment line `# %wheel ALL=(ALL) ALL`
 `cd .config/install`  
 `sh post-install.sh`
 
+#### Additional
+##### FacetimeHD Camera
+```shell
+yay -S facetimehd-dkms
+```
+Disable in case of issues with suspend/hibernate.  
+`modeprobe -r facetimehd`
+
 ---
 
 ## Detect other OS-es
@@ -208,7 +216,7 @@ If you have other OS-es installed already and want to include them in grub, foll
 
 #### 1. Install `os-prober`
 `pacman -S os-prober`
-        
+
 #### 2. You need to add `GRUB_DISABLE_OS_PROBER=false` to your `/etc/default/grub`
 
 #### 3. Generate grub `sudo grub-mkconfig -o /boot/grub/grub.cfg`
