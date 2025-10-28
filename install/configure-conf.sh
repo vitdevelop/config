@@ -42,13 +42,13 @@ ln -s --relative $HOME/.config/git/gitconfig $HOME/.gitconfig
 ln -s --relative $HOME/.config/picom/picom.conf $HOME/.picom.conf
 ln -s --relative $HOME/.config/streamlink/streamlinkrc $HOME/.streamlinkrc
 ln -s --relative $HOME/.config/imwheel/imwheelrc $HOME/.imwheelrc
-ln $HOME/.config/k9s/skin.yml $HOME/.k9s/skin.yml
+ln -s --relative $HOME/.config/k9s/skin.yml $HOME/.k9s/skin.yml
 
 func_print "Creating application links" 3
-ln $HOME/.config/bin/dmenu-cfg.sh $HOME/.local/bin/dmenu-cfg.sh
-ln $HOME/.config/bin/dmenu-poweroff.sh $HOME/.local/bin/dmenu-poweroff.sh
-ln $HOME/.config/bin/dmenu-screen.sh $HOME/.local/bin/dmenu-screen.sh
-ln $HOME/.config/bin/dmenu-theme.sh $HOME/.local/bin/dmenu-theme.sh
+ln -s --relative $HOME/.config/bin/dmenu-cfg.sh $HOME/.local/bin/dmenu-cfg.sh
+ln -s --relative $HOME/.config/bin/dmenu-poweroff.sh $HOME/.local/bin/dmenu-poweroff.sh
+ln -s --relative $HOME/.config/bin/dmenu-screen.sh $HOME/.local/bin/dmenu-screen.sh
+ln -s --relative $HOME/.config/bin/dmenu-theme.sh $HOME/.local/bin/dmenu-theme.sh
 
 sudo chsh -s /bin/zsh $USER
 

@@ -43,5 +43,6 @@ service/motherboard_led/it8297/__pycache__/
 !vifm/vifmrc
 !vifm/colors/
 !vifm/scripts/
+!web-greeter/
 !X/
 !zsh/

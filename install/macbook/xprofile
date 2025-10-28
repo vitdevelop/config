@@ -27,4 +27,5 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 xdg-settings set default-web-browser firefox
 
+xrandr --output eDP1 --scale 1.25x1.25
 

@@ -1,0 +1,5 @@
+[User]
+Session=bspwm
+XSession=bspwm
+Icon=/var/lib/AccountsService/icons/vitdevelop.png
+SystemAccount=false
