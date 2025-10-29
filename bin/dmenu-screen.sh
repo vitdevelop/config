@@ -1,5 +1,6 @@
 #!/bin/bash
 
+screen_script_path="/home/vitdevelop/.config/scripts/udev/auto_scale_monitors.sh"
 font="Symbols Nerd Font:Regular:size=14"
 parent=" Screen"
 
@@ -20,11 +21,11 @@ function extend() {
   local chosen=$(echo_menu "$menu" "$parent")
 
   case "$chosen" in
-    *Left) xrandr --output HDMI1 --left-of eDP1; restart_bspwm ;;
-      *Right) xrandr --output HDMI1 --right-of eDP1; restart_bspwm ;;
-      *Top) xrandr --output HDMI1 --above eDP1; restart_bspwm ;;
-      *Down) xrandr --output HDMI1 --below eDP1; restart_bspwm ;;
-      *Duplicate) xrandr --output HDMI1 --same-as eDP1; restart_bspwm ;;
+    *Left) bash "$screen_script_path" left ;;
+      *Right) bash "$screen_script_path" right  ;;
+      *Top) bash "$screen_script_path" top  ;;
+      *Down) bash "$screen_script_path" down  ;;
+      *Duplicate) bash "$screen_script_path" duplicate  ;;
       *Back) $($1);;
   esac
 
@@ -35,7 +36,7 @@ function main_menu() {
   local chosen=$(echo_menu "$menu" "$parent")
 
   case "$chosen" in
-      *Refresh) xrandr --auto; restart_bspwm ;;
+      *Refresh) bash "$screen_script_path" refresh ;;
       *Extend) $(extend main_menu) ;;
   esac
 }
