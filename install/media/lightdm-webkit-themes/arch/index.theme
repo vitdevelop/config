@@ -1,6 +1,0 @@
-[theme]
-name=Arch
-description=A simple arch lightdm greeter
-engine=lightdm-webkit-greeter
-url=index.html
-session=xfce

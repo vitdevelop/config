@@ -27,7 +27,7 @@ xdotool
 feh
 imagemagick
 lightdm
-web-greeter
+nody-greeter
 imwheel
 papirus-icon-theme
 materia-gtk-theme

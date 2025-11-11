@@ -25,7 +25,6 @@ pulseaudio-ctl
 pv
 skypeforlinux-stable-bin
 sxiv-rifle
-web-greeter
 downgrade
 )
 

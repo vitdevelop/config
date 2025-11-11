@@ -1,7 +1,7 @@
 branding:
     background_images_dir: /usr/share/backgrounds
-    logo_image:
-    user_image:
+    logo_image: /usr/share/web-greeter/themes/default/img/antergos-logo-user.png
+    user_image: /usr/share/web-greeter/themes/default/img/antergos.png
 
 greeter:
     debug_mode: False

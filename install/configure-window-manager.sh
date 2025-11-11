@@ -17,10 +17,12 @@ sudo cp $INSTALL_DIR/media/wallpapers/archlinux-cloud.png /usr/share/backgrounds
 sudo cp $INSTALL_DIR/media/wallpapers/archlinux-simplyblack.png /usr/share/backgrounds/archlinux/archlinux-simplyblack.png
 
 # LightDM Theme
-sudo cp -r $INSTALL_DIR/media/lightdm-webkit-themes/arch /usr/share/lightdm-webkit/themes/
-sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=web-greeter/' /etc/lightdm/lightdm.conf
-sudo sed -i 's/icon_theme:/icon_theme: None/' /etc/lightdm/web-greeter.yml
-sudo sed -i 's/time_language:/time_language: ru/' /etc/lightdm/web-greeter.yml
+sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=nody-greeter/' /etc/lightdm/lightdm.conf
+cd $INSTALL_DIR/../web-greeter
+bash configure-greeter.sh
+cd -
+
+###############################################################################
 
 xsetroot -cursor_name left_ptr
 
