@@ -15,15 +15,15 @@ redshift &
 # Polybar
 $HOME/.config/polybar/launch.sh
 
+# Background
+feh --bg-scale /usr/share/backgrounds/archlinux/landscape.jpg
+
 # Picom
 fastcompmgr -o 0.1 -r 12 -c -C &
 
 source ~/.xprofile
 
 bspc monitor -d I II III IV V VI VII VIII IX X
-
-# Background
-feh --bg-scale /usr/share/backgrounds/archlinux/landscape.jpg
 
 bspc config border_width         1
 bspc config window_gap          10
