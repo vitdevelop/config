@@ -43,7 +43,7 @@ func_print "Installing binary tools" 5
 #-----------------------------------------------
 
 # Teleconsole is a share console tool
-wget -c https://github.com/gravitational/teleconsole/releases/download/0.4.0/teleconsole-v0.4.0-linux-amd64.tar.gz -O - | sudo tar -xvz -C /usr/local/bin
+#wget -c https://github.com/gravitational/teleconsole/releases/download/0.4.0/teleconsole-v0.4.0-linux-amd64.tar.gz -O - | sudo tar -xvz -C /usr/local/bin
 
 func_print "Installing vim language servers" 5
 #-----------------------------------------------

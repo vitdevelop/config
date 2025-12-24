@@ -9,41 +9,42 @@ func_print "Installation of window manager software" 4
 ###############################################################################
 
 packages=(
-xorg-xinit
-xorg-server
-xorg-xmodmap
-xorg-xrandr
-xorg-xdpyinfo
-xorg-xrdb
-xorg-xsetroot
+arandr
+archlinux-wallpaper
 bspwm
-sxhkd
+clipmenu
 dmenu
-rofi
-rofi-mpd
-rofi-pass
-xdo
-xdotool
 feh
 imagemagick
-lightdm
-nody-greeter
 imwheel
-papirus-icon-theme
-materia-gtk-theme
-archlinux-wallpaper
-nautilus
-arandr
-clipmenu
+lightdm
 lxappearance
 lxrandr
-picom
+materia-gtk-theme
+nautilus
+nody-greeter
+papirus-icon-theme
 playerctl
 python-pywal
+sxhkd
 volumeicon
+xdo
+xdotool
+xorg-server
+xorg-xdpyinfo
+xorg-xinit
+xorg-xmodmap
+xorg-xrandr
+xorg-xrdb
+xorg-xsetroot
 )
 
 func_iterate_install "${packages[@]}"
+
+packages=(
+fastcompmgr
+)
+func_iterate_install_aur "${packages[@]}"
 
 ###############################################################################
 

@@ -52,11 +52,11 @@ super + {shift + t,s}
 # Fullscreen disable transparency
 super + f
     bspc node -t fullscreen; \
-    kill -15 $(pgrep -x picom);
+    kill -15 $(pgrep -x fastcmpmgr);
 
 super + t
     bspc node -t tiled; \
-    picom --config ~/.picom.conf &
+    fastcompmgr -o 0.1 -r 12 -c -C &
 
 # set the node flags
 super + ctrl + {m,x,y,z}

@@ -16,7 +16,7 @@ redshift &
 $HOME/.config/polybar/launch.sh
 
 # Picom
-picom --config ~/.picom.conf &
+fastcompmgr -o 0.1 -r 12 -c -C &
 
 source ~/.xprofile
 
