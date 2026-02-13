@@ -36,15 +36,15 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# -------------------------------------------------------------------------
 # User configuration -------------------------------------------------------------------------
 
 # ------------------------------
 # Aliases
+alias flameshot="QT_SCALE_FACTOR=0.57094 flameshot &> /dev/null & disown $1"
+alias libreoffice="GDK_BACKEND=x11 libreoffice &> /dev/null & disown $1"
 # ------------------------------
-# Java
+
 # ------------------------------
-# alias mvn-new="mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4"
 
 # Kubernetes
 # ------------------------------
@@ -62,10 +62,6 @@ function open {
     xdg-open $1 2>/dev/null &
 }
 
-# Java
-# alias j11='sudo archlinux-java set java-11-openjdk'
-# alias j14='sudo archlinux-java set java-14-openjdk'
-
 # Configuration Files
 # ------------------------------
 alias cfg-alacritty="nvim ~/.config/alacritty/alacritty.yml"
@@ -79,6 +75,8 @@ alias cfg-polybar="nvim ~/.config/polybar/config.ini ~/.config/polybar/modules.i
 alias cfg-install="nvim ~/.config/install/install.sh"
 alias cfg-qutebrowser="nvim ~/.config/qutebrowser/config.py"
 alias cfg-vifm="nvim ~/.config/vifm/vifmrc"
+alias cfg-river="nvim ~/.config/river/init"
+alias cfg-waybar="nvim ~/.config/waybar/config.jsonc"
 
 alias ce="find ~/.config -type f | grep -Ev \".git/|`cat ~/.config/.gitignore | sed '/^$/d' | sed 's/.*/&/' | tr '\n' '|' | sed '$s/|$/\n/'`\" | fzf --preview='bat --color=always --style=header,grid --line-range :300 {}' | xargs -r $EDITOR"
 

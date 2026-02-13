@@ -1,0 +1,14 @@
+sudo pacman -Rus sway
+rm -rf ~/.config/river
+
+sudo pacman -Rus swaybg
+sudo pacman -Rus waybar
+sudo pacman -Rus kanshi
+sudo pacman -Rus grim
+sudo pacman -Rus xdg-desktop-portal xdg-desktop-portal-wlr
+sudo pacman -Rus swaylock
+sudo pacman -Rus power-profiles-daemon
+sudo pacman -Rus cliphist
+sudo pacman -Rus otf-font-awesome
+
+sudo pacman -Rus rofi rofi-pass

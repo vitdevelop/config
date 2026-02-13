@@ -21,7 +21,6 @@ func_print "Installing software for category 'Graphics'" 5
 
 packages=(
 gimp
-inkscape
 )
 
 func_iterate_install "${packages[@]}"
@@ -34,6 +33,7 @@ packages=(
 firefox
 telegram-desktop
 qbittorrent
+chromium
 )
 
 func_iterate_install "${packages[@]}"
@@ -87,6 +87,7 @@ arc-gtk-theme
 gnome-keyring
 dunst
 xdg-utils
+power-profiles-daemon
 )
 
 func_iterate_install "${packages[@]}"
