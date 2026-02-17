@@ -8,9 +8,6 @@
   // Choose the order of the modules
   "modules-left": [
     "river/tags"
-    // "river/mode",
-    // "sway/scratchpad",
-    // "custom/media"
   ],
   /* "modules-center": [ */
   /* // "river/window" */
@@ -25,13 +22,12 @@
     "memory",
     "temperature",
     "backlight",
-    // "keyboard-state",
-    // "sway/language",
+    "custom/nvidia",
     "battery",
     // "battery#bat2",
     "clock",
-    "tray"
-    // "custom/power"
+    "tray",
+    "custom/power"
   ],
   // Modules configuration
   "river/tags": {
@@ -60,36 +56,10 @@
       "",
       ""
     ]
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
   },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-  /*     "river/mode": { */
-  /* "format": "<span style=\"italic\">{}</span>" */
-  /* }, */
   "mpris": {
-    "format": "{status_icon} <i>{artist} - {title}[{position}/{length}]</i>",
-    "format-paused": "{status_icon} <i>{artist} - {title}[{position}/{length}]</i>",
+    "format": "{status_icon} <i>{artist} - {title} [{position}/{length}]</i>",
+    "format-paused": "{status_icon} <i>{artist} - {title} [{position}/{length}]</i>",
     "interval": 2,
     "title-len": 32,
     "player-icons": {
@@ -102,13 +72,6 @@
       // "stopped": ""
     }
     // "ignored-players": ["firefox"]
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
   },
   "tray": {
     // "icon-size": 21,
@@ -131,9 +94,10 @@
     "format": "{}% "
   },
   "temperature": {
-    // "thermal-zone": 2,
+    "thermal-zone": 2,
     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
+    "interval": 2,
     // "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
     "format-icons": [
@@ -225,17 +189,11 @@
     },
     "on-click": "pavucontrol"
   },
-  "custom/media": {
-    "format": "{icon} {text}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  "custom/nvidia": {
+      "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🖥️ \\2°C 🌡️/g'",
+    "format": "{}",
+    "interval": 2,
+    "hide-empty-text": true
   },
   "custom/power": {
     "format": "⏻ ",
@@ -243,10 +201,11 @@
     "menu": "on-click",
     "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
     "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
+      "logout": "riverctl exit",
       "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate"
+      "hibernate": "systemctl hibernate",
+      "reboot": "reboot",
+      "shutdown": "systemctl poweroff"
     }
   }
 }

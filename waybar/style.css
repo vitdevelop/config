@@ -4,6 +4,14 @@
     font-size: 13px;
 }
 
+label.module {
+  border-radius: 5px;
+}
+
+box.module {
+  border-radius: 5px;
+}
+
 window#waybar {
     background-color: rgba(43, 48, 59, 0.5);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
@@ -302,7 +310,7 @@ label:focus {
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 #privacy {
@@ -347,3 +355,13 @@ label:focus {
     background-color: #eb4d4b;
 }
 
+/* ---------- Custom ----------------- */
+#custom-nvidia {
+  padding-left: 4px;
+  padding-right: 4px;
+
+/* spacing: 4; in json config, affect bottom space, this will fix it,
+ * margin-bottom: -4px also will fix, but will remove bottom border styles */
+  padding-top: 4px;
+  background-color: #76b900;
+}
