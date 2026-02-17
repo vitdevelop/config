@@ -9,21 +9,17 @@ func_print "Installation of sound software" 4
 ###############################################################################
 
 packages=(
-pulseaudio
+pipewire
 libpulse
-pulseaudio-alsa
 pavucontrol
-alsa-firmware
 alsa-lib
-alsa-plugins
-alsa-utils
 gstreamer
+gst-plugin-pipewire
 gst-plugins-good
 gst-plugins-bad
 gst-plugins-base
 gst-plugins-ugly
 playerctl
-volumeicon
 )
 
 func_iterate_install "${packages[@]}"

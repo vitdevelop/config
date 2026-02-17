@@ -56,7 +56,8 @@ If prompt passphrase enter and then exit from `iwctl`
 `mount /dev/sda3 /mnt/home`
 
 #### 6. Install base packages
-`pacstrap /mnt base base-devel linux linux-headers linux-firmware grub efibootmgr neovim git`
+`mkdir /mnt/etc && echo "KEYMAP=us" > /mnt/etc/vconsole.conf`  
+`pacstrap /mnt base base-devel linux linux-headers linux-firmware grub efibootmgr neovim git less`
 
 > Microcode need to be installed if you have intel or amd  
 > Intel -> `intel-ucode`  
@@ -193,7 +194,7 @@ Execute `visudo` and uncomment line `# %wheel ALL=(ALL) ALL`
 `cd config/install`
 
 #### 8. Run the configuration
-`sh install.sh`
+`sh install.sh 2>&1 | tee ~/install.log`
 
 #### 9. Reboot
 

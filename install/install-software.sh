@@ -43,23 +43,27 @@ func_iterate_install "${packages[@]}"
 func_print "Installing software for category 'Multimedia'" 5
 
 packages=(
-mplayer
-mpv
-streamlink
-simplescreenrecorder
+#mplayer
+#mpv
+#streamlink
 flameshot
-imagemagick
-meld
-maim
-mpd
-exiv2
-mp3info
-sox
-cmus
-ffmpegthumbnailer
+#exiv2
+#mp3info
+#sox
+#ffmpegthumbnailer
 )
+if [ "$DISPLAY" = "x11" ]; then
+  packages+=(
+    simplescreenrecorder
+  )
+fi
 
 func_iterate_install "${packages[@]}"
+
+packages=(
+spotify
+)
+func_iterate_install_aur "${packages[@]}"
 
 ###############################################################################
 
@@ -67,9 +71,10 @@ func_print "Installing software for category 'Office'" 5
 
 packages=(
 evince
-evolution
-foliate
-xpdf
+libreoffice-still
+#evolution
+#foliate
+#xpdf
 )
 
 func_iterate_install "${packages[@]}"
@@ -82,11 +87,10 @@ func_iterate_install "${packages[@]}"
 func_print "Installing software for category 'System'" 5
 
 packages=(
-dconf-editor
-arc-gtk-theme
-gnome-keyring
+#dconf-editor
+#arc-gtk-theme
+#gnome-keyring
 dunst
-xdg-utils
 power-profiles-daemon
 )
 
@@ -97,15 +101,15 @@ func_iterate_install "${packages[@]}"
 func_print "Installing software for category 'Unpack'" 5
 
 packages=(
-unace
+#unace
 unrar
 zip
 unzip
-sharutils
-uudeview
-arj
-cabextract
-file-roller
+#sharutils
+#uudeview
+#arj
+#cabextract
+#file-roller
 )
 
 func_iterate_install "${packages[@]}"
@@ -124,36 +128,36 @@ func_print "Installing software for category 'Tools'" 5
 
 packages=(
 alacritty
-ueberzug
-tmux
+#ueberzug
+#tmux
 zsh
-bat
+#bat
 fzf
 vifm
 tree
-w3m
+#w3m
 wget
 htop
 rsync
-cronie
-gvfs
-xsel
+#cronie
+#gvfs
+#xsel
 dnsutils
 nfs-utils
-iotop
+#iotop
 iftop
-nmon
-glances
+#nmon
+#glances
 neofetch
 man
-tldr
+#tldr
 nmap
 net-tools
 yt-dlp
 reflector
 pass
-figlet
-libqalculate
+#figlet
+#libqalculate
 scrcpy
 )
 
@@ -165,8 +169,19 @@ func_print "Installing software for category 'Drivers'" 5
 
 packages=(
 mesa
-xf86-video-intel
 )
+if [ "$GPU" = "nvidia" ]; then
+  packages+=(
+    nvidia-open
+    nvidia-settings
+  )
+fi
+
+if [ "$GPU" = "intel" ]; then
+  packages+=(
+    xf86-video-intel
+  )
+fi
 
 func_iterate_install "${packages[@]}"
 

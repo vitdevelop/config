@@ -24,35 +24,6 @@ function! CleanEmptyBuffers()
     endif
 endfunction
 
-function! CreateTmuxRunPane(cmd)
-    if FindRootDirectory() == ''
-        return
-    endif
-
-    let l:number_of_panes = trim(system("tmux list-panes | wc -l"))
-    if l:number_of_panes == 1
-        silent :exec "!tmux split-window -v -d -l 17 -c " . FindRootDirectory()
-    else
-        silent :exec "!tmux send -t 2 C-c"
-    endif
-
-    silent :exec "!tmux send -t 2 -R \; clear-history"
-    silent :exec "!tmux send -t 2 '" . a:cmd . "' Enter"
-endfunction
-
-function! DeleteTmuxRunPane()
-    let l:number_of_panes = trim(system("tmux list-panes | wc -l"))
-    if l:number_of_panes > 1
-        silent :exec "!tmux send -t 2 C-c"
-        silent :exec "!tmux kill-pane -a -t 1"
-    endif
-endfunction
-
-function! GetMakefileTargets()
-    let l:targets = systemlist('cat Makefile | grep "^[A-z]" | awk "{print $1}" | sed "s/://g"')
-    return l:targets
-endfunction
-
 function! GetGitBranchList()
     let l:targets = systemlist('git branch')
     call map(l:targets, {idx, val -> substitute(val, "*", "", "")})
@@ -117,15 +88,6 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
-
-function! FormatHttpResponse()
-    set conceallevel=0
-    set modifiable
-    call search("{", "c")
-    execute "'<,'>!python -m json.tool"
-    set nomodifiable
-endfunction
-
 
 function! ToggleTabStops()
     set noexpandtab

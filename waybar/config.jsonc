@@ -49,15 +49,15 @@
       512
     ],
     "tag-labels": [
-      "",
+      "",
       "",
       "",
       "",
-      "",
+      "",
       "",
       "",
+      "",
       "",
-      "",
       ""
     ]
     //     "disable-scroll": true,
@@ -194,8 +194,9 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "interval": 2,
     "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-ethernet": "  {bandwidthDownBytes}   {bandwidthUpBytes}",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",

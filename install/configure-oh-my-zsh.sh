@@ -2,7 +2,7 @@
 
 echo "Installing oh-my-zsh"
 curl -Lo install_oh_my_zsh.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-CHSH=no RUNZSH=no sh ./install_oh_my_zsh.sh
+CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh ./install_oh_my_zsh.sh
 rm install_oh_my_zsh.sh
 
 echo "Installing zsh-autosuggestions"

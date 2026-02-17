@@ -1,4 +1,4 @@
-sudo pacman -Rus sway
+sudo pacman -Rus river
 rm -rf ~/.config/river
 
 sudo pacman -Rus swaybg

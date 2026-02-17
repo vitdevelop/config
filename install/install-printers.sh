@@ -11,12 +11,11 @@ func_print "Installation of printer software" 4
 packages=(
 cups
 cups-pdf
-ghostscript
-gsfonts
-gutenprint
-gtk3-print-backends
+#ghostscript
+#gsfonts
+#gutenprint
 libcups
-system-config-printer
+#system-config-printer
 )
 
 func_iterate_install "${packages[@]}"

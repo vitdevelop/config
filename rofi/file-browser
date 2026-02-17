@@ -1,0 +1,6 @@
+path-sep "/"
+up-icon "go-previous"
+oc-cmd "alacritty -e nvim;icon:vim;name:Vim"
+oc-cmd "alacritty -e vifm;icon:vifm;name:Vifm"
+oc-cmd "nautilus;icon:nautilus;name:File Manager"
+icon-theme "Adwaita"

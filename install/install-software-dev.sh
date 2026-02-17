@@ -9,7 +9,7 @@ func_print "Installation of development software" 4
 ###############################################################################
 
 packages=(
-ack
+# ack
 base-devel
 docker
 git
@@ -17,7 +17,7 @@ go
 go-tools
 helm
 highlight
-httpie
+# httpie
 jdk-openjdk
 jq
 k9s
@@ -27,11 +27,12 @@ npm
 nodejs
 pygmentize
 python-pip
-ripgrep
-s3cmd
+# ripgrep
+rustup
+# s3cmd
 vagrant
 virtualbox
-virtualbox-host-modules-arch
+# virtualbox-host-modules-arch
 )
 
 func_iterate_install "${packages[@]}"
@@ -40,8 +41,8 @@ func_iterate_install "${packages[@]}"
 
 func_print "Enabling services" 5
 
-sudo systemctl enable docker.service
-sudo systemctl start docker.service
+sudo systemctl enable --now docker.service
+# sudo systemctl start docker.service
 sudo usermod -aG docker $USER
 
 ###############################################################################

@@ -15,12 +15,12 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export TERMINAL='alacritty'
 export READER='evince'
-export BROWSER='qutebrowser'
-export VIDEO='mpv'
+# export BROWSER='qutebrowser'
+# export VIDEO='mpv'
 export IMAGE='sxiv'
 export OPENER='xdg-open'
 export PAGER='less'
-export WM='bspwm'
+export WM='bspwm' # X11
 
 # Clipboard Manager
 export CM_SELECTION="clipboard"

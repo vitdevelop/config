@@ -1,16 +1,13 @@
 #! /bin/sh
 
 # sxhkd
-killall -s SIGKILL sxhkd
-sxhkd &
+killall -q sxhkd; sxhkd &
 
 ## Enable clipboard manager
-clipmenud &
+killall -q clipmenud; clipmenud &
 
 # Enable redshift
-killall -s SIGKILL redshift
-redshift -x
-redshift &
+killall -q gammastep; gammastep &
 
 # Polybar
 $HOME/.config/polybar/launch.sh

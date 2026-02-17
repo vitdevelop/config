@@ -22,11 +22,21 @@ cd $INSTALL_DIR/../web-greeter
 bash configure-greeter.sh
 cd -
 
+# Display Day/Night shift
+if [ "$DISPLAY" == "wayland" ]; then
+    METHOD="wayland"
+elif [ "$DISPLAY" == "x11" ]; then
+    METHOD="randr"
+fi
+
+sed -i "s/^adjustment-method=.*/adjustment-method=$METHOD/" $INSTALL_DIR/../gammastep/config.ini
+
 ###############################################################################
+if [ "$DISPLAY" = "x11" ]; then
+  xsetroot -cursor_name left_ptr
+fi
 
-xsetroot -cursor_name left_ptr
-
-sudo systemctl enable mpd
+#sudo systemctl enable mpd
 
 ###############################################################################
 

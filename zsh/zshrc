@@ -26,7 +26,7 @@ HYPHEN_INSENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  tmux
+  # tmux
   zsh-autosuggestions
   zsh-syntax-highlighting
   kubectl
@@ -68,7 +68,7 @@ alias cfg-alacritty="nvim ~/.config/alacritty/alacritty.yml"
 alias cfg-zsh="nvim ~/.config/zsh/zshrc"
 alias cfg-vim="nvim ~/.config/nvim/init.vim"
 alias cfg-ideavim="nvim ~/.config/idea/ideavimrc"
-alias cfg-tmux="nvim ~/.config/tmux/tmux.conf"
+#alias cfg-tmux="nvim ~/.config/tmux/tmux.conf"
 alias cfg-sxhkd="nvim ~/.config/sxhkd/sxhkdrc"
 alias cfg-bspwm="nvim ~/.config/bspwm/bspwmrc"
 alias cfg-polybar="nvim ~/.config/polybar/config.ini ~/.config/polybar/modules.ini"
@@ -243,81 +243,81 @@ fd() { local dir dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d \
 
 # TMUX helper functions
 # Create config session with all config files
-tmux-config () {
-    ROOT_PATH="$HOME"
-    tmux has -t config 2> /dev/null
-    if [[ $? == 1 ]]; then
-        # Create a new TMUX session
-        tmux new-session -d -s config -n zsh-config     -c "$ROOT_PATH/.config"
-        tmux send-keys 'cfg-zsh' C-m
-
-        tmux new-window -n tmux-config                  -c "$ROOT_PATH/.config/tmux"
-        tmux send-keys 'cfg-tmux' C-m
-
-        tmux new-window -n vim-config                   -c "$ROOT_PATH/.config/nvim"
-        tmux send-keys 'cfg-vim' C-m
-
-        tmux new-window -n ideavim-config               -c "$ROOT_PATH/.config/nvim"
-        tmux send-keys 'cfg-ideavim' C-m
-
-        tmux new-window -n vifm-config                -c "$ROOT_PATH/.config/vifm"
-        tmux send-keys 'cfg-vifm' C-m
-
-        tmux new-window -n x-config                -c "$ROOT_PATH/.config/X"
-        tmux send-keys 'cfg-x' C-m
-
-        tmux select-window -t 1
-        tmux attach-session -t config
-    else
-        # Attaching to existing session
-        tmux attach-session -t config
-    fi
-}
+# tmux-config () {
+    # ROOT_PATH="$HOME"
+    # tmux has -t config 2> /dev/null
+    # if [[ $? == 1 ]]; then
+    #     # Create a new TMUX session
+    #     tmux new-session -d -s config -n zsh-config     -c "$ROOT_PATH/.config"
+    #     tmux send-keys 'cfg-zsh' C-m
+    #
+    #     tmux new-window -n tmux-config                  -c "$ROOT_PATH/.config/tmux"
+    #     tmux send-keys 'cfg-tmux' C-m
+    #
+    #     tmux new-window -n vim-config                   -c "$ROOT_PATH/.config/nvim"
+    #     tmux send-keys 'cfg-vim' C-m
+    #
+    #     tmux new-window -n ideavim-config               -c "$ROOT_PATH/.config/nvim"
+    #     tmux send-keys 'cfg-ideavim' C-m
+    #
+    #     tmux new-window -n vifm-config                -c "$ROOT_PATH/.config/vifm"
+    #     tmux send-keys 'cfg-vifm' C-m
+    #
+    #     tmux new-window -n x-config                -c "$ROOT_PATH/.config/X"
+    #     tmux send-keys 'cfg-x' C-m
+    #
+    #     tmux select-window -t 1
+    #     tmux attach-session -t config
+    # else
+    #     # Attaching to existing session
+    #     tmux attach-session -t config
+    # fi
+# }
 
 # Create notes session
-tmux-notes () {
-    ROOT_PATH="$HOME/Notes"
-    tmux has -t notes 2> /dev/null
-    if [[ $? == 1 ]]; then
-        # Create a new TMUX session
-        tmux new-session -d -s Work     -c "$ROOT_PATH/work"
-        tmux send-keys 'cd ~/Notes/work && vim -c "call vimwiki#base#goto_index(1)"' C-m
-
-        # Create a new TMUX session
-        tmux new-window -n Personal     -c "$ROOT_PATH/personal"
-        tmux send-keys 'cd ~/Notes/work && vim -c "call vimwiki#base#goto_index(2)"' C-m
-
-        if [[ $1 = true ]]; then
-            tmux select-window -t 1
-            tmux attach-session -t notes
-        fi
-    else
-        # Attaching to existing session
-        tmux attach-session -t notes
-    fi
-}
-
-# Create tests session
-tmux-tests () {
-    ROOT_PATH='/tmp'
-    tmux has -t tests 2> /dev/null
-    if [[ $? == 1 ]]; then
-        # Create a new TMUX session
-        tmux new-session -d -s tests     -c "$ROOT_PATH"
-
-        if [[ $1 = true ]]; then
-            tmux select-window -t 1
-            tmux attach-session -t tests
-        fi
-    else
-        # Attaching to existing session
-        tmux attach-session -t tests
-    fi
-}
-
-tmux-killall() {
-    tmux list-sessions | awk 'BEGIN{FS=":"}{print $1}' | xargs -n 1 tmux kill-session -t
-}
+# tmux-notes () {
+#     ROOT_PATH="$HOME/Notes"
+#     tmux has -t notes 2> /dev/null
+#     if [[ $? == 1 ]]; then
+#         # Create a new TMUX session
+#         tmux new-session -d -s Work     -c "$ROOT_PATH/work"
+#         tmux send-keys 'cd ~/Notes/work && vim -c "call vimwiki#base#goto_index(1)"' C-m
+#
+#         # Create a new TMUX session
+#         tmux new-window -n Personal     -c "$ROOT_PATH/personal"
+#         tmux send-keys 'cd ~/Notes/work && vim -c "call vimwiki#base#goto_index(2)"' C-m
+#
+#         if [[ $1 = true ]]; then
+#             tmux select-window -t 1
+#             tmux attach-session -t notes
+#         fi
+#     else
+#         # Attaching to existing session
+#         tmux attach-session -t notes
+#     fi
+# }
+#
+# # Create tests session
+# tmux-tests () {
+#     ROOT_PATH='/tmp'
+#     tmux has -t tests 2> /dev/null
+#     if [[ $? == 1 ]]; then
+#         # Create a new TMUX session
+#         tmux new-session -d -s tests     -c "$ROOT_PATH"
+#
+#         if [[ $1 = true ]]; then
+#             tmux select-window -t 1
+#             tmux attach-session -t tests
+#         fi
+#     else
+#         # Attaching to existing session
+#         tmux attach-session -t tests
+#     fi
+# }
+#
+# tmux-killall() {
+#     tmux list-sessions | awk 'BEGIN{FS=":"}{print $1}' | xargs -n 1 tmux kill-session -t
+# }
 
 
 ftags() {
@@ -330,39 +330,39 @@ ftags() {
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
 
-tm() {
-  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
-  if [ $1 ]; then
-    tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
-  fi
-  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
-}
+# tm() {
+  # [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+  # if [ $1 ]; then
+  #   tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
+  # fi
+  # session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
+# }
 
-fts() {
-  local session
-  session=$(tmux list-sessions -F "#{session_name}" | \
-    fzf --query="$1" --select-1 --exit-0) &&
-  tmux switch-client -t "$session"
-}
+# fts() {
+  # local session
+  # session=$(tmux list-sessions -F "#{session_name}" | \
+  #   fzf --query="$1" --select-1 --exit-0) &&
+  # tmux switch-client -t "$session"
+# }
 
-ftpane() {
-  local panes current_window current_pane target target_window target_pane
-  panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
-  current_pane=$(tmux display-message -p '#I:#P')
-  current_window=$(tmux display-message -p '#I')
-
-  target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
-
-  target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
-  target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
-
-  if [[ $current_window -eq $target_window ]]; then
-    tmux select-pane -t ${target_window}.${target_pane}
-  else
-    tmux select-pane -t ${target_window}.${target_pane} &&
-    tmux select-window -t $target_window
-  fi
-}
+# ftpane() {
+  # local panes current_window current_pane target target_window target_pane
+  # panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
+  # current_pane=$(tmux display-message -p '#I:#P')
+  # current_window=$(tmux display-message -p '#I')
+  #
+  # target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
+  #
+  # target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
+  # target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
+  #
+  # if [[ $current_window -eq $target_window ]]; then
+  #   tmux select-pane -t ${target_window}.${target_pane}
+  # else
+  #   tmux select-pane -t ${target_window}.${target_pane} &&
+  #   tmux select-window -t $target_window
+  # fi
+# }
 
 fkill() {
     local pid

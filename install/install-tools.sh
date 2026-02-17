@@ -9,35 +9,35 @@ source ./utils.sh
 
 func_print "Installing python tools" 5
 #-----------------------------------------------
-pip install simple_http_server
-pip install mycli
+#pip install simple_http_server
+#pip install mycli
 # pip install pgcli
 # pip install sqlline
-pip install iredis
+#pip install iredis
 
 # Markdown preview in browser
-pip install grip
+#pip install grip
 
 # Markdown preview in terminal
-pip install mdv
+#pip install mdv
 
 # Speed test
-pip install speedtest-cli
+#pip install speedtest-cli
 
 # yaml processor
-pip install yq
+#pip install yq
 
 func_print "Installing nodejs tools" 5
 #-----------------------------------------------
 
 # Instant Markdown preview package for vim
-sudo npm -g install instant-markdown-d
+#sudo npm -g install instant-markdown-d
 
 # Weather app
-sudp npm install -g weather-cli
+#sudp npm install -g weather-cli
 
 # Json viewer
-sudp npm install -g fx
+#sudp npm install -g fx
 
 func_print "Installing binary tools" 5
 #-----------------------------------------------
