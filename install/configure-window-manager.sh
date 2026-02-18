@@ -36,7 +36,7 @@ if [ "$DISPLAY" = "x11" ]; then
   xsetroot -cursor_name left_ptr
 fi
 
-#sudo systemctl enable mpd
+sudo bash $INSTALL_DIR/web-greeter/configure-greeter.sh
 
 ###############################################################################
 
