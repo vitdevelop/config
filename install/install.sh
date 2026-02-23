@@ -24,16 +24,16 @@ set +a
 # ---------------
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/go/bin
-mkdir $HOME/Downloads
-mkdir $HOME/Documents
-mkdir $HOME/Workspace
-mkdir $HOME/VirtualBox
-mkdir $HOME/Desktop
-mkdir $HOME/Screenshots
-mkdir $HOME/Video
-mkdir $HOME/Music
-mkdir $HOME/Photos
-mkdir $HOME/.trash
+mkdir -p $HOME/Downloads
+mkdir -p $HOME/Documents
+mkdir -p $HOME/Workspace
+mkdir -p $HOME/VirtualBox
+mkdir -p $HOME/Desktop
+mkdir -p $HOME/Screenshots
+mkdir -p $HOME/Video
+mkdir -p $HOME/Music
+mkdir -p $HOME/Photos
+mkdir -p $HOME/.trash
 # ---------------
 
 echo "Installing YAY"

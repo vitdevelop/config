@@ -25,6 +25,11 @@ python -m pip install --user --upgrade pynvim
 func_print "Installing neovim node provider" 3
 sudo npm install -g neovim
 
+func_print "Installing neovim plugins" 3
+nvim --headless +PlugInstall +qa
+# See issue morhetz/gruvbox/issues/465
+sed -i "/StatusLine/s/, s:inverse//" $HOME/.vim/plugged/gruvbox/colors/gruvbox.vim
+
 #func_print "Installing tmux plugin manager" 3
 #git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
@@ -63,7 +68,7 @@ sudo chsh -s /bin/zsh $USER
 #touch $HOME/.local/share/qutebrowser/blocked-hosts
 
 rm -rf $HOME/config
-cd $HOME 
+cd $HOME
 
 ###############################################################################
 
