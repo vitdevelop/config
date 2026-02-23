@@ -9,7 +9,6 @@
 !X/
 !alacritty/
 !betterlockscreenrc
-!migrate_wayland.txt
 !bin/
 !bspwm/
 !cargo/
@@ -21,6 +20,7 @@
 !idea/
 !install/
 !k9s/
+!migrate_wayland.txt
 !mimeapps.list
 !nvim/
 !picom/
@@ -37,5 +37,4 @@
 !vifm/vifmrc
 !waybar/
 !web-greeter/
-!X/
 !zsh/

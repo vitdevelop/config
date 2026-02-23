@@ -106,45 +106,45 @@
       ""
     ]
   },
-  "backlight": {
-    // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery": {
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
+/*  "backlight": {*/
+    /*// "device": "acpi_video1",*/
+    /*"format": "{percent}% {icon}",*/
+    /*"format-icons": [*/
+      /*"",*/
+      /*"",*/
+      /*"",*/
+      /*"",*/
+      /*"",*/
+      /*"",*/
+      /*"",*/
+      /*"",*/
+      /*""*/
+    /*]*/
+  /*},*/
+  /*"battery": {*/
+    /*"states": {*/
+      /*// "good": 95,*/
+      /*"warning": 30,*/
+      /*"critical": 15*/
+    /*},*/
+    /*"format": "{capacity}% {icon}",*/
+    /*"format-full": "{capacity}% {icon}",*/
+    /*"format-charging": "{capacity}% ",*/
+    /*"format-plugged": "{capacity}% ",*/
+    /*"format-alt": "{time} {icon}",*/
+    /*// "format-good": "", // An empty format will hide the module*/
+    /*// "format-full": "",*/
+    /*"format-icons": [*/
+      /*"",*/
+      /*"",*/
+      /*"",*/
+      /*"",*/
+      /*""*/
+    /*]*/
+  /*},*/
+  /*"battery#bat2": {*/
+    /*"bat": "BAT2"*/
+  /*},*/
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -190,9 +190,10 @@
     "on-click": "pavucontrol"
   },
   "custom/nvidia": {
-      "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🖥️ \\2°C 🌡️/g'",
+      "exec": "sh $HOME/.config/waybar/nvidia-data.sh",
     "format": "{}",
-    "interval": 2,
+    "return-type": "json",
+    "restart-interval": 2,
     "hide-empty-text": true
   },
   "custom/power": {
@@ -201,9 +202,10 @@
     "menu": "on-click",
     "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
     "menu-actions": {
+      "lock": "swaylock -F -f --indicator-idle-visible -i /usr/share/backgrounds/archlinux/landscape.jpg",
       "logout": "riverctl exit",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate",
+      "suspend": "setsid -f sh -c 'swaylock -F -f --indicator-idle-visible -i /usr/share/backgrounds/archlinux/landscape.jpg && systemctl suspend'",
+      "hibernate": "setsid -f sh -c 'swaylock -F -f --indicator-idle-visible -i /usr/share/backgrounds/archlinux/landscape.jpg && systemctl hibernate'",
       "reboot": "reboot",
       "shutdown": "systemctl poweroff"
     }
