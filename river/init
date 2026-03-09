@@ -13,7 +13,7 @@ killall -q kanshi; kanshi & # autoscale screen when enter/exit(restart) composit
 
 killall -q gammastep; gammastep &
 
-riverctl keyboard-layout -options "grp:ralt_rshift_toggle,caps:swapescape,altwin:swap_alt_win" us,ru
+riverctl keyboard-layout -options "grp:ralt_rshift_toggle,caps:escape,altwin:swap_alt_win" us,ru
 
 riverctl map normal Super Return spawn alacritty
 riverctl map normal Super w close
@@ -198,3 +198,15 @@ riverctl rule-add -app-id "spotify" tags 512 # nr.10 (2^9)
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
+#
+# Dunstctl
+# --------------------------
+# Close last notification
+riverctl map normal Control+Alt Space spawn 'dunstctl close'
+
+# Close all notifications
+riverctl map normal Control+Shift Space spawn 'dunstctl close-all'
+
+# Pop one notification from history
+riverctl map normal Control Grave spawn 'dunstctl history-pop'
+
