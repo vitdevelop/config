@@ -67,6 +67,12 @@ if [ "$DISPLAY" = "x11" ]; then
     fastcompmgr
   )
 fi
+if [ "$DISPLAY" = "wayland" ]; then
+  packages+=(
+    lswt
+  )
+fi
+
 func_iterate_install_aur "${packages[@]}"
 
 ###############################################################################
