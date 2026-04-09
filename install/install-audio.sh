@@ -10,9 +10,10 @@ func_print "Installation of sound software" 4
 
 packages=(
 pipewire
-libpulse
+pipewire-pulse
+pipewire-alsa
+wireplumber
 pavucontrol
-alsa-lib
 gstreamer
 gst-plugin-pipewire
 gst-plugins-good
