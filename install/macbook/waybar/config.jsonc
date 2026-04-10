@@ -67,8 +67,8 @@
       "mpv": "🎵"
     },
     "status-icons": {
-      "playing": "▶",
-      "paused": "⏸"
+      "playing": "⏸",
+      "paused": "▶"
       // "stopped": ""
     }
     // "ignored-players": ["firefox"]

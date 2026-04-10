@@ -116,8 +116,7 @@ do
     # riverctl map normal Super+Shift $i set-view-tags $tags
     riverctl map normal Super+Shift $i spawn "riverctl set-view-tags $tags; riverctl set-focused-tags $tags"
 
-    # Super+Control+[1-9] to toggle focus of tag [0-8]
-    riverctl map normal Super+Control $i toggle-focused-tags $tags
+    # Super+Control+[1-9] to toggle focus of tag [0-8] riverctl map normal Super+Control $i toggle-focused-tags $tags
 
     # Super+Shift+Control+[1-9] to toggle tag [0-8] of focused view
     riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
@@ -173,8 +172,8 @@ do
     riverctl map $mode None XF86KbdBrightnessDown spawn 'kbdlight down 5'
 
     # Control screen backlight brightness
-    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 2'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 2'
 done
 
 # Set background and border color
@@ -190,8 +189,24 @@ riverctl set-repeat 66 350
 
 # Make all views with app-id "bar" and any title use client-side decorations
 # riverctl rule-add -app-id "bar" csd
+riverctl rule-add -app-id "firefox" tags 4 # nr.3 (2^2)
+riverctl rule-add -app-id "chromium" tags 32 # nr.6 (2^5)
+riverctl rule-add -app-id "org.telegram.desktop" tags 256 # nr.9 (2^8)
+riverctl rule-add -app-id "spotify" tags 512 # nr.10 (2^9)
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
+#
+# Dunstctl
+# --------------------------
+# Close last notification
+riverctl map normal Control+Alt Space spawn 'dunstctl close'
+
+# Close all notifications
+riverctl map normal Control+Shift Space spawn 'dunstctl close-all'
+
+# Pop one notification from history
+riverctl map normal Control Grave spawn 'dunstctl history-pop'
+
