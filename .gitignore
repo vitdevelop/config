@@ -20,12 +20,10 @@
 !idea/
 !install/
 !k9s/
-!migrate_wayland.txt
 !mimeapps.list
 !nvim/
 !picom/
 !polybar/
-!pulseaudio-ctl/
 !river/
 !rofi/
 !scripts/
@@ -36,5 +34,4 @@
 !vifm/scripts/
 !vifm/vifmrc
 !waybar/
-!web-greeter/
 !zsh/
