@@ -1,0 +1,9 @@
+# use the last user and session, go straight to the password prompt
+skip_selection = true
+
+[background]
+path = "/etc/greetd/background.jpg"
+fit = "Cover"
+
+[GTK]
+application_prefer_dark_theme = true

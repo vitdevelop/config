@@ -28,6 +28,17 @@ func_install_aur() {
     fi
 }
 
+# builds and installs a local PKGBUILD directory with makepkg, AUR dependencies must be installed
+# before. It builds a copy, so src/ and pkg/ don't end up in the config repo (and yay -B must not be
+# used here, it runs git reset --hard in the repo that contains the directory)
+func_install_aur_dir() {
+    func_print "Installing PKGBUILD '"$1"'" 3
+    local tmp=$(mktemp -d)
+    cp -r $1/. $tmp/
+    (cd $tmp && makepkg -si --noconfirm)
+    rm -rf $tmp
+}
+
 func_iterate_install() {
     count=0
     local list=("$@")

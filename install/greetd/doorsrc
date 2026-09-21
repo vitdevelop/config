@@ -1,0 +1,13 @@
+#! /bin/sh
+# Greeter session: doors as the compositor for ReGreet, exits when the greeter exits
+
+doorsctl input type:keyboard xkb_layout us,ru
+doorsctl input type:keyboard xkb_options grp:ralt_rshift_toggle,caps:escape,altwin:swap_alt_win
+doorsctl config border_width 0
+doorsctl config window_gap 0
+doorsctl config enable_animations false
+doorsctl config decoration_mode none
+doorsctl config idle_timeout 0
+
+regreet
+doorsctl quit

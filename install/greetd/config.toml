@@ -1,0 +1,7 @@
+[terminal]
+vt = 1
+
+[default_session]
+# regreet runs inside doors (package from install-doors.sh)
+command = "/usr/bin/doors -c /etc/greetd/doors"
+user = "greeter"
