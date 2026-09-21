@@ -139,7 +139,6 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias merge='xrdb -merge ~/.Xresources'
 
 alias mail='evolution'
 

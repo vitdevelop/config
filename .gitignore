@@ -6,11 +6,8 @@
 !Arch_Linux_Install.md
 !HOWTO.md
 !README.md
-!X/
 !alacritty/
-!betterlockscreenrc
 !bin/
-!bspwm/
 !cargo/
 !cmus/
 !doors/
@@ -23,14 +20,9 @@
 !k9s/
 !mimeapps.list
 !nvim/
-!picom/
-!polybar/
-!river/
 !rofi/
 !scripts/
 !service/
-!sxhkd/
-!sxiv/
 !vifm/colors/
 !vifm/scripts/
 !vifm/vifmrc
