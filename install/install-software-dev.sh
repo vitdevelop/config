@@ -12,30 +12,39 @@ packages=(
 # ack
 base-devel
 docker
+docker-buildx
+docker-compose
 git
 go
 go-tools
+golangci-lint
 helm
 highlight
 # httpie
 jdk-openjdk
 jq
 k9s
+kind
 kubectl
 maven
 npm
 nodejs
-pygmentize
+python-pygments
 python-pip
 # ripgrep
 rustup
 # s3cmd
-vagrant
 virtualbox
-# virtualbox-host-modules-arch
+virtualbox-host-dkms
 )
 
 func_iterate_install "${packages[@]}"
+
+packages=(
+vagrant
+)
+
+func_iterate_install_aur "${packages[@]}"
 
 ###############################################################################
 

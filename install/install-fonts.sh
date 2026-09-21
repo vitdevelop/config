@@ -36,7 +36,7 @@ ttf-material-design-icons-extended
 
 func_iterate_install_aur "${packages[@]}"
 
-bash update_polybar_theme.sh
+bash install-theme-fonts.sh
 
 ###############################################################################
 

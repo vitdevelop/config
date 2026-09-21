@@ -2,7 +2,7 @@
 #set -e
 
 # Installs doors (https://github.com/dy-tea/doors) from the AUR doors-git PKGBUILD in ./doors, which
-# builds the vitdevelop fork (branch all-fixes) instead of upstream. Not called from install.sh yet.
+# builds the vitdevelop fork (branch all-fixes) instead of upstream.
 # doors-git depends on wlroots-git (0.21), which conflicts with wlroots-nvidia (only needed by
 # wl-gammactl), the script removes those first.
 # The package also installs the wayland session for the display manager.

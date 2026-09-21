@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "FontAwesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "FontAwesome 6 Free", "feather", Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
 
@@ -62,6 +62,7 @@ button:hover {
 }
 
 #workspaces button {
+    min-width: 25px;
     padding: 0 5px;
     background-color: transparent;
     color: #ffffff;

@@ -5,7 +5,7 @@ let maplocalleader = "``"
 
 " ===== Plugins {{{
 set surround
-set vim-multiple-cursors
+set multiple-cursors
 " }}}
 
 " ===== Settings {{{
@@ -43,6 +43,9 @@ set ttimeoutlen=0
 " }}}
 
 " ===== Code editing  {{{
+
+nmap <C-a> <Plug>AllOccurrences
+xmap <C-a> <Plug>AllOccurrences
 
 " Move Statements
 nnoremap <C-S-k> :action MoveStatementUp<CR>

@@ -47,18 +47,10 @@ ln -s --relative $HOME/.config/git/gitconfig $HOME/.gitconfig
 ln -s --relative $HOME/.config/k9s/skin.yml $HOME/.k9s/skin.yml
 ln -s --relative $HOME/.config/cargo $HOME/.cargo
 
-if [ "$DISPLAY" = "x11" ]; then
-  ln -s --relative $HOME/.config/X/xprofile $HOME/.xprofile
-  ln -s --relative $HOME/.config/X/xresources $HOME/.Xresources
-fi
-
 func_print "Creating application links" 3
-if [ "$DISPLAY" = "x11" ]; then
-  ln -s --relative $HOME/.config/bin/dmenu-cfg.sh $HOME/.local/bin/dmenu-cfg.sh
-  ln -s --relative $HOME/.config/bin/dmenu-poweroff.sh $HOME/.local/bin/dmenu-poweroff.sh
-  ln -s --relative $HOME/.config/bin/dmenu-screen.sh $HOME/.local/bin/dmenu-screen.sh
-  ln -s --relative $HOME/.config/bin/dmenu-theme.sh $HOME/.local/bin/dmenu-theme.sh
-fi
+ln -s --relative $HOME/.config/bin/rofi-cfg.sh $HOME/.local/bin/rofi-cfg.sh
+ln -s --relative $HOME/.config/bin/rofi-poweroff.sh $HOME/.local/bin/rofi-poweroff.sh
+ln -s --relative $HOME/.config/bin/rofi-theme.sh $HOME/.local/bin/rofi-theme.sh
 
 sudo chsh -s /bin/zsh $USER
 

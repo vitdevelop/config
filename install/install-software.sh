@@ -46,24 +46,16 @@ packages=(
 #mplayer
 #mpv
 #streamlink
+cmus
 flameshot
+spotify-launcher
 #exiv2
 #mp3info
 #sox
 #ffmpegthumbnailer
 )
-if [ "$DISPLAY" = "x11" ]; then
-  packages+=(
-    simplescreenrecorder
-  )
-fi
 
 func_iterate_install "${packages[@]}"
-
-packages=(
-spotify
-)
-func_iterate_install_aur "${packages[@]}"
 
 ###############################################################################
 
@@ -92,6 +84,7 @@ packages=(
 #gnome-keyring
 dunst
 power-profiles-daemon
+galculator
 )
 
 func_iterate_install "${packages[@]}"
@@ -129,9 +122,9 @@ func_print "Installing software for category 'Tools'" 5
 packages=(
 alacritty
 #ueberzug
-#tmux
+tmux
 zsh
-#bat
+bat
 fzf
 vifm
 tree
@@ -142,14 +135,14 @@ rsync
 #cronie
 #gvfs
 #xsel
-dnsutils
+bind
 nfs-utils
 #iotop
 iftop
 #nmon
-#glances
-neofetch
-man
+glances
+fastfetch
+man-db
 #tldr
 nmap
 net-tools

@@ -1,0 +1,149 @@
+#
+# Doors hotkeys (ported from ~/.config/sxhkd/sxhkdrc)
+#
+
+# terminal
+super + Return
+	alacritty
+
+# launcher
+super + space
+	rofi -show drun
+super + alt + space
+	rofi -show run
+
+# clipboard history
+super + v
+	cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+# close window
+super + w
+	doorsctl node --close
+
+# reload hotkeys is automatic on save; quit / restart
+super + alt + q
+	doorsctl quit
+super + shift + e
+	doorsctl quit
+
+# re-run doorsrc (settings, rules; daemons already running are kept)
+super + alt + r
+	sh ~/.config/doors/doorsrc
+
+# restart waybar
+super + shift + r
+	sh -c 'pkill -x -u "$USER" waybar; sleep 0.3; setsid waybar -c ~/.config/waybar/config-doors.jsonc >/dev/null 2>&1 &'
+
+# fullscreen / tiled / floating / pseudo-tiled
+super + f
+	doorsctl node --state fullscreen
+super + t
+	doorsctl node --state floating
+super + s
+	doorsctl node --state floating
+
+# layouts
+super + m
+	doorsctl desktop --layout monocle
+super + shift + m
+	doorsctl desktop --layout tiled
+
+# focus / swap
+super + {h,j,k,l}
+	doorsctl focus {west,south,north,east}
+super + shift + {h,j,k,l}
+	doorsctl swap {west,south,north,east}
+
+# focus last desktop
+super + Tab
+	doorsctl desktop last
+
+# focus next/prev desktop
+super + bracket{left,right}
+	doorsctl desktop {prev,next}
+
+# desktops
+super + {0-9}
+	doorsctl desktop {10,1,2,3,4,5,6,7,8,9}
+super + shift + {0-9}
+	sh -c 'doorsctl node --to-desktop $0 && doorsctl desktop $0' {X,I,II,III,IV,V,VI,VII,VIII,IX}
+
+# rotate
+super + r
+	doorsctl rotate clockwise
+super + ctrl + r
+	doorsctl rotate counterclockwise
+
+# preselect
+super + ctrl + {h,j,k,l}
+	doorsctl presel {west,south,north,east}
+super + ctrl + space
+	doorsctl presel cancel
+
+# resize
+super + alt + {h,j,k,l}
+	doorsctl resize {left,down,up,right}
+
+# mouse move/resize
+super + mouse_left
+	doorsctl node interactive_move
+super + mouse_right
+	doorsctl node interactive_resize
+
+# applications
+super + shift + b
+	firefox
+super + shift + Return
+	alacritty -e vifmrun
+super + alt + shift + Return
+	nautilus
+super + shift + i
+	~/.local/idea/bin/idea.sh nosplash
+super + shift + p
+	alacritty -e htop
+super + alt + shift + p
+	alacritty -e glances
+super + shift + m
+	alacritty -e cmus
+
+# lock
+super + alt + ctrl + q
+	swaylock -F -f -i /usr/share/backgrounds/archlinux/landscape.jpg
+
+# screenshots
+Print
+	grim -g "$(slurp)" - | wl-copy
+
+# audio
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}2%
+XF86AudioPlay
+	playerctl play-pause
+XF86Audio{Prev,Next}
+	playerctl {previous,next}
+
+# notifications
+ctrl + alt + space
+	dunstctl close
+ctrl + shift + space
+	dunstctl close-all
+ctrl + grave
+	dunstctl history-pop
+
+# menus
+super + alt + ctrl + 0
+	rofi-poweroff.sh
+super + alt + ctrl + 1
+	rofi-cfg.sh
+super + alt + ctrl + 8
+	rofi-theme.sh
+
+# brightness
+super + F{6,7}
+	brightnessctl set 5%{-,+}
+
+# calculator
+XF86Calculator
+	galculator

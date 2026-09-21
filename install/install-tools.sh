@@ -52,11 +52,13 @@ func_print "Installing vim language servers" 5
 packages=(
     ccls
     gopls
+    python-lsp-server
 )
 
 func_iterate_install "${packages[@]}"
 
-pip install 'python-language-server[all]'
+# python-language-server is dead and pip is externally managed on Arch, see python-lsp-server above
+#pip install 'python-language-server[all]'
 
 vim +PlugInstall
 vim +CocInstall coc-json

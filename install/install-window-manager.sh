@@ -4,6 +4,9 @@
 # Load utils
 source ./utils.sh
 
+# The compositor (doors) and the login manager (greetd + regreet) are installed by install-doors.sh
+# and install-greeter.sh
+
 ###############################################################################
 func_print "Installation of window manager software" 4
 ###############################################################################
@@ -11,75 +14,30 @@ func_print "Installation of window manager software" 4
 packages=(
 archlinux-wallpaper
 gammastep
-lightdm
 materia-gtk-theme
 nautilus
-playerctl
+swaybg
+waybar
+kanshi
+grim
+slurp
+xdg-desktop-portal
+xdg-desktop-portal-wlr
+swaylock
+cliphist
+wl-clipboard
+otf-font-awesome
+rofi
+rofi-pass
 )
-
-if [ "$DISPLAY" = "x11" ]; then
-  packages+=(
-    bspwm
-    sxhkd
-    polybar
-    clipmenu
-    dmenu
-    feh
-    imagemagick # for betterlockscreen, feh
-    xdo
-    xdotool
-    xorg-server
-    xorg-xdpyinfo
-    xorg-xinit
-    xorg-xmodmap
-    xorg-xrandr
-    xorg-xrdb
-    xorg-xsetroot
-  )
-fi
-if [ "$DISPLAY" = "wayland" ]; then
-  packages+=(
-    river
-    swaybg
-    waybar
-    kanshi
-    grim
-    xdg-desktop-portal
-    xdg-desktop-portal-wlr
-    swaylock
-    power-profiles-daemon
-    cliphist
-    otf-font-awesome
-    rofi
-    rofi-pass
-  )
-fi
 
 func_iterate_install "${packages[@]}"
 
-packages=(
-nody-greeter
-)
-
-if [ "$DISPLAY" = "x11" ]; then
-  packages+=(
-    betterlockscreen
-    fastcompmgr
-  )
-fi
-if [ "$DISPLAY" = "wayland" ]; then
-  packages+=(
-    lswt
-  )
-fi
-
-func_iterate_install_aur "${packages[@]}"
-
-###############################################################################
-
-func_print "Enabling lightdm as display manager" 5
-
-sudo systemctl enable lightdm.service -f
+# wl-gammarelay-rs: brightness/gamma/temperature, replacement for wl-gammactl
+#packages=(
+#wl-gammarelay-rs
+#)
+#func_iterate_install_aur "${packages[@]}"
 
 ###############################################################################
 

@@ -12,8 +12,6 @@ func_print "Installation of AUR software" 4
 packages=(
 arch-silence-grub-theme-git
 docker-credential-pass
-golangci-lint-bin
-kind
 downgrade
 )
 

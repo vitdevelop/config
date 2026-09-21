@@ -16,27 +16,8 @@ func_print "Applying window manager configuration" 4
 sudo cp $INSTALL_DIR/media/wallpapers/archlinux-cloud.png /usr/share/backgrounds/archlinux/archlinux-cloud.png
 sudo cp $INSTALL_DIR/media/wallpapers/archlinux-simplyblack.png /usr/share/backgrounds/archlinux/archlinux-simplyblack.png
 
-# LightDM Theme
-sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=nody-greeter/' /etc/lightdm/lightdm.conf
-cd $INSTALL_DIR/../web-greeter
-bash configure-greeter.sh
-cd -
-
 # Display Day/Night shift
-if [ "$DISPLAY" == "wayland" ]; then
-    METHOD="wayland"
-elif [ "$DISPLAY" == "x11" ]; then
-    METHOD="randr"
-fi
-
-sed -i "s/^adjustment-method=.*/adjustment-method=$METHOD/" $INSTALL_DIR/../gammastep/config.ini
-
-###############################################################################
-if [ "$DISPLAY" = "x11" ]; then
-  xsetroot -cursor_name left_ptr
-fi
-
-sudo bash $INSTALL_DIR/web-greeter/configure-greeter.sh
+sed -i "s/^adjustment-method=.*/adjustment-method=wayland/" $INSTALL_DIR/../gammastep/config.ini
 
 ###############################################################################
 
