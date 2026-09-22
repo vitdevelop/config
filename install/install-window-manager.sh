@@ -27,7 +27,6 @@ cliphist
 wl-clipboard
 otf-font-awesome
 rofi
-rofi-pass
 brightnessctl
 )
 
@@ -37,7 +36,12 @@ func_iterate_install "${packages[@]}"
 # hyprland/workspaces module sends the old "dispatch workspace N" IPC command, which the new
 # hyprctl/Hyprland rejects outright, so clicking a workspace button silently does nothing.
 # waybar-git (built from current upstream HEAD) has this fixed.
-func_install_aur waybar-git
+packages=(
+waybar-git
+rofi-pass
+)
+
+func_iterate_install_aur "${packages[@]}"
 
 # wl-gammarelay-rs: brightness/gamma/temperature, replacement for wl-gammactl
 #packages=(
