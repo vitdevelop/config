@@ -51,6 +51,7 @@ func_print "Creating application links" 3
 ln -s --relative $HOME/.config/bin/rofi-cfg.sh $HOME/.local/bin/rofi-cfg.sh
 ln -s --relative $HOME/.config/bin/rofi-poweroff.sh $HOME/.local/bin/rofi-poweroff.sh
 ln -s --relative $HOME/.config/bin/rofi-theme.sh $HOME/.local/bin/rofi-theme.sh
+ln -s --relative $HOME/.config/bin/rofi-screen.sh $HOME/.local/bin/rofi-screen.sh
 
 sudo chsh -s /bin/zsh $USER
 

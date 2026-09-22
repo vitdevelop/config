@@ -10,11 +10,11 @@
 !bin/
 !cargo/
 !cmus/
-!doors/
 !dunst/
 !gammastep/
 !git/
 !gtk-3.0/
+!hypr/
 !idea/
 !install/
 !k9s/

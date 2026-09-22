@@ -1,6 +1,10 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "FontAwesome 6 Free", "feather", Roboto, Helvetica, Arial, sans-serif;
+    /* `otf-font-awesome` is required to be installed for icons. "Font Awesome 7 Free Solid" is
+       the icon-complete face's own distinct family alias, so no font-weight/bold trick is
+       needed to select it (its plain "Font Awesome 7 Free" name is the near-empty Regular face).
+       "Iosevka Nerd Font" covers the workspace app-brand icons (e.g. Firefox) that aren't part
+       of Font Awesome at all. */
+    font-family: Roboto, Helvetica, Arial, sans-serif, "Font Awesome 7 Free Solid", "feather", "Iosevka Nerd Font";
     font-size: 13px;
 }
 

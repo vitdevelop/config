@@ -2,6 +2,8 @@
 vt = 1
 
 [default_session]
-# regreet runs inside doors (package from install-doors.sh)
-command = "/usr/bin/doors -c /etc/greetd/doors"
+# regreet runs inside Hyprland (package from install-window-manager.sh)
+# wrapped with systemd-cat so Hyprland's own log reaches the journal instead of a VT nobody
+# reads; see it with: journalctl -t hyprland-greeter
+command = "systemd-cat -t hyprland-greeter start-hyprland -- --config /etc/greetd/hypr/hyprland.lua"
 user = "greeter"

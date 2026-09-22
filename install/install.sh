@@ -41,7 +41,6 @@ sh $INSTALL_DIR/install-yay.sh
 
 echo "Installing Window Manager"
 sh $INSTALL_DIR/install-window-manager.sh
-sh $INSTALL_DIR/install-doors.sh
 sh $INSTALL_DIR/install-greeter.sh
 
 echo "Installing System"

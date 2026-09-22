@@ -4,34 +4,40 @@
 # Load utils
 source ./utils.sh
 
-# The compositor (doors) and the login manager (greetd + regreet) are installed by install-doors.sh
-# and install-greeter.sh
+# The login manager (greetd + regreet) is installed by install-greeter.sh
 
 ###############################################################################
 func_print "Installation of window manager software" 4
 ###############################################################################
 
 packages=(
+hyprland
 archlinux-wallpaper
 gammastep
 materia-gtk-theme
 nautilus
 swaybg
-waybar
-kanshi
+kanshi wlr-randr wl-mirror wayvnc
 grim
 slurp
 xdg-desktop-portal
-xdg-desktop-portal-wlr
+xdg-desktop-portal-hyprland
 swaylock
 cliphist
 wl-clipboard
 otf-font-awesome
 rofi
 rofi-pass
+brightnessctl
 )
 
 func_iterate_install "${packages[@]}"
+
+# the packaged extra/waybar (0.15.0) predates Hyprland's Lua dispatch rewrite: its
+# hyprland/workspaces module sends the old "dispatch workspace N" IPC command, which the new
+# hyprctl/Hyprland rejects outright, so clicking a workspace button silently does nothing.
+# waybar-git (built from current upstream HEAD) has this fixed.
+func_install_aur waybar-git
 
 # wl-gammarelay-rs: brightness/gamma/temperature, replacement for wl-gammactl
 #packages=(

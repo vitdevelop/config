@@ -1,18 +1,16 @@
 // -*- mode: jsonc -*-
 {
-  "layer": "top", // waybar defaults to "bottom", which puts its popup menus behind windows in doors
+  "layer": "top", // waybar defaults to "bottom", which puts its popup menus behind windows
   // "position": "bottom", // Waybar position (top|bottom|left|right)
   // "height": 30, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "ext/workspaces",
-    "disk#root",
-    "disk#home"
+    "hyprland/workspaces"
   ],
   /* "modules-center": [ */
-  /* // "river/window" */
+  /* // "hyprland/window" */
   /* ], */
   "modules-right": [
     "mpris",
@@ -28,15 +26,16 @@
     "battery",
     // "battery#bat2",
     "clock",
-    "tray",
-    "custom/power"
+    "tray"
   ],
   // Modules configuration
-  "ext/workspaces": {
+  "hyprland/workspaces": {
     "format": "{icon}",
-    "on-click": "activate",
     "sort-by-id": true,
-    "format-icons": {"I": "", "II": "", "III": "", "IV": "", "V": "", "VI": "", "VII": "", "VIII": "", "IX": "", "X": ""}
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
+    "format-icons": {"1": "\ue07a", "2": "\uf120", "3": "\ue745", "4": "\uf120", "5": "\uf013", "6": "\uf268", "7": "\uf121", "8": "\uf1b6", "9": "\uf2c6", "10": "\uf1bc"}
   },
   "mpris": {
     "format": "{status_icon} <i>{artist} - {title} [{position}/{length}]</i>",
@@ -68,22 +67,12 @@
     "format-alt": "{:%Y-%m-%d}"
   },
   "cpu": {
-    "format": "{usage}% ",
+    "format": "\uf2db {usage}% ",
     "tooltip": false,
     "interval": 1
   },
-  "disk#root": {
-    "path": "/",
-    "format": " / {used}/{total}",
-    "interval": 30
-  },
-  "disk#home": {
-    "path": "/home",
-    "format": " ~ {used}/{total}",
-    "interval": 30
-  },
   "memory": {
-    "format": "{}% ",
+    "format": "\uf538 {}% ",
     "interval": 1
   },
   "temperature": {
@@ -94,24 +83,24 @@
     // "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
     "format-icons": [
-      "",
-      "",
-      ""
+      "\uf2cb",
+      "\uf2c9",
+      "\uf2c7"
     ]
   },
   "backlight": {
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "\uf185",
+      "\uf185",
+      "\uf185",
+      "\uf185",
+      "\uf185",
+      "\uf185",
+      "\uf185",
+      "\uf185",
+      "\uf185"
     ]
   },
   "battery": {
@@ -122,17 +111,17 @@
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "\uf244",
+      "\uf243",
+      "\uf242",
+      "\uf241",
+      "\uf240"
     ]
   },
   "battery#bat2": {
@@ -143,41 +132,41 @@
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
+      "default": "\uf624",
+      "performance": "\uf0e7",
+      "balanced": "\uf24e",
+      "power-saver": "\uf06c"
     }
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "interval": 2,
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "  {bandwidthDownBytes}   {bandwidthUpBytes}",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
+    "format-wifi": "\uf1eb {essid} ({signalStrength}%)",
+    "format-ethernet": "\uf796  \uf019 {bandwidthDownBytes}  \uf093 {bandwidthUpBytes}",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "\uf1eb {ifname} (No IP)",
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "\uf130 {volume}%",
+    "format-source-muted": "\uf131",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
+      "headphone": "\uf025",
+      "hands-free": "\uf590",
+      "headset": "\uf590",
+      "phone": "\uf3ce",
+      "portable": "\uf3ce",
+      "car": "\uf1b9",
       "default": [
-        "",
-        "",
-        ""
+        "\uf026",
+        "\uf027",
+        "\uf028"
       ]
     },
     "on-click": "pavucontrol"
@@ -188,19 +177,5 @@
     "return-type": "json",
     "restart-interval": 2,
     "hide-empty-text": true
-  },
-  "custom/power": {
-    "format": "⏻ ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    "menu-actions": {
-      "lock": "swaylock -F -f --indicator-idle-visible -i /usr/share/backgrounds/archlinux/landscape.jpg",
-      "logout": "doorsctl quit",
-      "suspend": "setsid -f sh -c 'swaylock -F -f --indicator-idle-visible -i /usr/share/backgrounds/archlinux/landscape.jpg && systemctl suspend'",
-      "hibernate": "setsid -f sh -c 'swaylock -F -f --indicator-idle-visible -i /usr/share/backgrounds/archlinux/landscape.jpg && systemctl hibernate'",
-      "reboot": "reboot",
-      "shutdown": "systemctl poweroff"
-    }
   }
 }
